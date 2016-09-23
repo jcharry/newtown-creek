@@ -2,6 +2,6 @@ node_modules
 npm-debug.log
 .DS_Store
 *.swp
-app/dist/
-out/
+dist
+out
 config/*.env
