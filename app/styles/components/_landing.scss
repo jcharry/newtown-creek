@@ -1,0 +1,28 @@
+.landing-page-enter {
+    /*opacity: 0.01;*/
+    top: 100vh;
+}
+
+.landing-page-appear {
+    opacity: 0.01;
+}
+
+.landing-page-appear.landing-page-appear-active {
+  top: 0;
+  transition: top 500ms;
+}
+
+.landing-page-enter.landing-page-enter-active {
+  top: 0;
+  transition: top 500ms;
+}
+
+.landing-page-leave {
+    top: 0;
+}
+
+.landing-page-leave.landing-page-leave-active {
+  top: 100vh;
+  transition: top 300ms;
+}
+

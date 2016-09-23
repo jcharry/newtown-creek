@@ -1,0 +1,55 @@
+.home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    overflow: hidden;
+    max-height: 100vh;
+    opacity: 0;
+
+    /*transition: visibility 0s linear 0.5s, opacity 0.5s;*/
+    transition: opacity 0.5s;
+
+    .show-intro {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        max-width: 100px;
+        font-size: 7pt;
+        color: dimgrey;
+        text-align: center;
+        transition: opacity 0.5s;
+        cursor: pointer;
+    }
+    .show-intro:hover {
+        opacity: 0.7;
+    }
+
+    .home-left {
+        flex: 2;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        p {
+            padding: 0 1rem 0 1rem;
+            color: dimgrey;
+            margin: 0;
+        }
+        p:last-child {
+            margin-top: 10px;
+        }
+    }
+    .home-right {
+        /*overflow-y: scroll;*/
+        /*overflow-x: hidden;*/
+        /*display: flex;*/
+        min-height: 100vh;
+        min-width: 400px;
+        flex: 1;
+        overflow-y: auto;
+        /*flex-basis: 40%*/
+    }
+}
