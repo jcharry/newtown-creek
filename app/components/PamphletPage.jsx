@@ -16,9 +16,6 @@ export class PamphletPage extends React.Component {
         this.handleMenuClick = this.handleMenuClick.bind(this);
     }
 
-    componentDidUpdate(prevProps) {
-        console.log(this.props.nav.visible);
-    }
     handleMenuClick(e) {
         const { dispatch, nav } = this.props;
         e.preventDefault();
@@ -87,12 +84,12 @@ export class PamphletPage extends React.Component {
                     <h2>Urban Rivers are arteries</h2>
                     <p>They are ecosystemic, cultural, and global trade connectors. Their histories can provide pathways to embodied understanding of health, development, pollution, and collapse. Newtown Creek is a waterway home to ribbed mussels, killifish, and muskrats. It also happens to be one of the worst sites</p>
                 </div>
-                <button className={nav.visible ? "menu hamburger hamburger--spring is-active" : "menu hamburger hamburger--spring"} type="button" onClick={this.handleMenuClick}>
-                      <span className="hamburger-box">
-                          <span className={nav.visible ? "hamburger-inner menu-active" : "hamburger-inner"}></span>
-                      </span>
+                <button className={nav.visible ? 'menu hamburger hamburger--spring is-active' : 'menu hamburger hamburger--spring'} type='button' onClick={this.handleMenuClick}>
+                    <span className='hamburger-box'>
+                        <span className={nav.visible ? 'hamburger-inner menu-active' : 'hamburger-inner'} />
+                    </span>
                 </button>
-                {nav.visible && <div className='nav-container'><Nav canClose/></div> }
+                {nav.visible && <div className='nav-container'><Nav canClose /></div> }
                 <Link to='/' className='show-intro'>A FIELD GUIDE TO THE DARK ECOLOGIES OF NEWTOWN CREEK</Link>
             </div>
         );
@@ -103,7 +100,8 @@ export class PamphletPage extends React.Component {
 PamphletPage.propTypes = {
     pageInfo: React.PropTypes.object.isRequired,
     params: React.PropTypes.object.isRequired,
-    dispatch: React.PropTypes.func
+    dispatch: React.PropTypes.func.isRequired,
+    nav: React.PropTypes.object.isRequired
 };
 
 export default connect((state) => {
