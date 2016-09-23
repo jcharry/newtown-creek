@@ -93,6 +93,7 @@ export class PamphletPage extends React.Component {
                       </span>
                 </button>
                 {nav.visible && <div className='nav-container'><Nav canClose/></div> }
+                <Link to='/' className='show-intro'>A FIELD GUIDE TO THE DARK ECOLOGIES OF NEWTOWN CREEK</Link>
             </div>
         );
     }
