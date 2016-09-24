@@ -34,7 +34,7 @@
         flex: 0;
         display: flex;
         justify-content: space-around;
-        padding: 1rem 0 0 0;
+        padding: 1.5rem 0 0 0;
 
         .nav-button {
             /*background: transparent;*/
@@ -67,6 +67,9 @@
             display: flex;
             flex-direction: row;
         }
+        a:active {
+            background-color:lightgrey;
+        }
 
         .nav-left {
             p {
@@ -88,5 +91,9 @@
         color: white;
         top: 50px;
         font-size: 1rem;
+    }
+
+    @media (max-width: 600px) {
+
     }
 }

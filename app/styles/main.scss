@@ -2,6 +2,7 @@
 @import 'base/components';
 @import 'base/hamburgers/hamburgers';
 
+
 @import 'components/landing';
 @import 'components/nav';
 @import 'components/home';
@@ -29,7 +30,6 @@
 
 body {
     background-color: lightgrey;
-    font-family: Georgia;
     padding: 0;
     margin: 0;
     font-family: 'Raleway';

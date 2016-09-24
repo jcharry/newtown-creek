@@ -8,32 +8,48 @@ export class DownloadPopup extends React.Component {
         super(props);
         this.handleClick = this.handleClick.bind(this);
     }
-    componentDidMount() {
-    }
     handleClick(e) {
         const { dispatch } = this.props;
         e.preventDefault();
         dispatch(actions.hideDownloadPopup());
     }
     render() {
-        let style = {};
-        const { popup } = this.props;
-        if (popup) {
+        const style = {};
+        const { visible } = this.props;
+        if (visible) {
             style.visibility = 'visible';
         } else {
             style.visibility = 'hidden';
         }
         return (
             <div className='download-popup' style={style}>
-                <p>download</p>
-                <button onClick={this.handleClick}>X</button>
+                <div className='bg'>
+                    <h2>Want to Participate? Here's how:</h2>
+                    <ol>
+                        <li>
+                            <p><span className='clickable'>Download</span> the pamphlet and go identify things at Newtown Creek</p>
+                        </li>
+                        <li>
+                            <p><span className='clickable'>Go on the audio walk</span> lorem ipsum dolor sit</p>
+                        </li>
+                        <li>
+                            <p><span className='clickable'>Attend our next event</span> on November 21, 2016</p>
+                        </li>
+                    </ol>
+                <button className='download-popup-close-btn is-active hamburger hamburger--spring' type='button' onClick={this.handleClick}>
+                    <span className='hamburger-box'>
+                        <span className='hamburger-inner'/>
+                    </span>
+                </button>
+                </div>
             </div>
         );
     }
 }
 
-export default connect((state) => {
-    return {
-        popup: state.popup
-    };
-})(DownloadPopup);
+DownloadPopup.propTypes = {
+    visible: React.PropTypes.bool,
+    dispatch: React.PropTypes.func
+};
+
+export default connect()(DownloadPopup);

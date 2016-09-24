@@ -25,3 +25,11 @@ a {
     transition: opacity 0.5s;
     cursor: pointer;
 }
+
+@media (max-width: 600px) {
+    .show-intro {
+        font-size: 5pt;
+        top: 3px;
+        left: 3px;
+    }
+}

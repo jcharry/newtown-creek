@@ -1,6 +1,3 @@
-/*
- */
-
 var webpack = require('webpack');
 var path = require('path');
 var loaders = require('./config/loaders');
@@ -15,16 +12,23 @@ process.env.PWD = process.cwd();
 
 module.exports = {
     devtool: process.env.NODE_ENV === 'production' ? null : 'cheap-eval-source-map',
-    entry: process.env.NODE_ENV === 'production' ? 
-        './app/app.jsx' : [
+    entry: process.env.NODE_ENV === 'production' ?
+    [
+        'script!jquery/dist/jquery.min.js',
+        'script!foundation-sites/dist/foundation.min.js',
+        './app/app.jsx'
+    ] :
+    [
         'webpack-dev-server/client?http://localhost:8080',
         'webpack/hot/dev-server',
+        'script!jquery/dist/jquery.min.js',
+        'script!foundation-sites/dist/foundation.min.js',
         './app/app.jsx'
     ],
     node: {
         fs: 'empty'
     },
-    output: { 
+    output: {
         path: path.join(process.env.PWD, 'dist'),
         filename: 'bundle.js',
         //publicPath: 'dist/'
@@ -33,11 +37,16 @@ module.exports = {
         root: __dirname,
         alias: {
             'webworkify': 'webworkify-webpack',
-            app: 'app',
+            app: 'app'
         },
         extensions: ['', '.js', '.jsx']
     },
     module: loaders,
+    sassLoader: {
+        includePaths: [
+            path.resolve(__dirname, './node_modules/foundation-sites/scss')
+        ]
+    },
     postcss: function() {
         return [require('autoprefixer'), require('precss')];
     },

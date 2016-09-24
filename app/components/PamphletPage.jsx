@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import Nav from 'app/components/Nav';
-import DownloadPopup from 'app/components/DownloadPopup';
+//import DownloadPopup from 'app/components/DownloadPopup';
 //import Nav from 'app/components/Nav';
 //import { hashHistory } from 'react-router';
 import * as actions from 'app/actions/actions';
@@ -57,20 +57,20 @@ export class PamphletPage extends React.Component {
         return (
             <div className='arrows'>
                 {prevPage && <Link className='arrow-left' to={`experience/${prevPage.url}`}>
-                    <div>
+                    <div className='arrow-title'>
                         <p>{prevPage.position}&nbsp;&nbsp;/</p>
                         <p>{prevPage.header}</p>
                     </div>
-                    <div>
+                    <div className='arrow-img'>
                         <p>&lt;</p>
                     </div>
                 </Link>}
                 {nextPage && <Link className='arrow-right' to={`experience/${nextPage.url}`}>
-                    <div>
+                    <div className='arrow-title'>
                         <p>{nextPage.position}&nbsp;&nbsp;/</p>
                         <p>{nextPage.header}</p>
                     </div>
-                    <div>
+                    <div className='arrow-img'>
                         <p>&gt;</p>
                     </div>
                 </Link>}
@@ -79,10 +79,15 @@ export class PamphletPage extends React.Component {
     }
 
     render() {
-        const { nav, pageData } = this.props;
+        const { nav, pageData, blurred } = this.props;
         const position = parseInt(pageData.position, 10);
+
+        const style = {};
+        if (blurred) {
+            style.filter = 'blur(5px)';
+        }
         return (
-            <div className='pamphlet-page' ref={(c) => { this.elt = c; }}>
+            <div className='pamphlet-page' ref={(c) => { this.elt = c; }} style={style} >
                 <div className='bg'>
                     <img className='bg-img' src={bgImg} alt='factory in newtown creek' />
                 </div>
@@ -96,6 +101,10 @@ export class PamphletPage extends React.Component {
                 {this.renderArrows(position)}
                 <div className='content'>
                     <h2>Urban Rivers are arteries</h2>
+                    <p>They are ecosystemic, cultural, and global trade connectors. Their histories can provide pathways to embodied understanding of health, development, pollution, and collapse. Newtown Creek is a waterway home to ribbed mussels, killifish, and muskrats. It also happens to be one of the worst sites</p>
+                    <p>They are ecosystemic, cultural, and global trade connectors. Their histories can provide pathways to embodied understanding of health, development, pollution, and collapse. Newtown Creek is a waterway home to ribbed mussels, killifish, and muskrats. It also happens to be one of the worst sites</p>
+                    <p>They are ecosystemic, cultural, and global trade connectors. Their histories can provide pathways to embodied understanding of health, development, pollution, and collapse. Newtown Creek is a waterway home to ribbed mussels, killifish, and muskrats. It also happens to be one of the worst sites</p>
+                    <p>They are ecosystemic, cultural, and global trade connectors. Their histories can provide pathways to embodied understanding of health, development, pollution, and collapse. Newtown Creek is a waterway home to ribbed mussels, killifish, and muskrats. It also happens to be one of the worst sites</p>
                     <p>They are ecosystemic, cultural, and global trade connectors. Their histories can provide pathways to embodied understanding of health, development, pollution, and collapse. Newtown Creek is a waterway home to ribbed mussels, killifish, and muskrats. It also happens to be one of the worst sites</p>
                 </div>
                 <button className={nav.visible ? 'menu hamburger hamburger--spring is-active' : 'menu hamburger hamburger--spring'} type='button' onClick={this.handleMenuClick}>
@@ -113,9 +122,10 @@ export class PamphletPage extends React.Component {
 
 PamphletPage.propTypes = {
     allPages: React.PropTypes.object.isRequired,
-    //params: React.PropTypes.object.isRequired,
     dispatch: React.PropTypes.func.isRequired,
-    nav: React.PropTypes.object.isRequired
+    nav: React.PropTypes.object.isRequired,
+    pageData: React.PropTypes.object.isRequired,
+    blurred: React.PropTypes.bool
 };
 
 export default connect((state) => {

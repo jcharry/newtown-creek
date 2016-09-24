@@ -47,7 +47,7 @@ export class Home extends React.Component {
                     <p>A Field Guide to the Dark Ecologies of Newtown Creek, will connect members of the Newtown Creek community to the hidden potential of the obscured and maligned waterway that runs through their neighborhoods, the future of which will impact the quality of life for multiple stakeholders and species.</p>
                     <p>The Field Guide is composed of a set of four self-guided pamphlets accompanied by site-specific engagements, all generated with community partners.</p>
                 </div>
-                <div className='home-right'>
+                <div ref={(c) => { this.homeRight = c; }}className='home-right'>
                     <Nav />
                 </div>
             </div>
@@ -61,9 +61,4 @@ Home.propTypes = {
 };
 
 export default connect()(Home);
-//export default connect((state) => {
-    //return {
-        //isLoading: state.isLoading,
-    //};
-//})(Home);
 
