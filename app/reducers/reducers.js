@@ -58,3 +58,14 @@ export const landingPageReducer = (state = false, action) => {
 export const pageInfoReducer = (state = pageInfo, action) => { // eslint-disable-line
     return state;
 };
+
+export const popupReducer = (state = false, action) => {
+    switch (action.type) {
+        case 'SHOW_DOWNLOAD_POPUP':
+            return true;
+        case 'HIDE_DOWNLOAD_POPUP':
+            return false;
+        default:
+            return state;
+    }
+};

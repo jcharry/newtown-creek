@@ -3,17 +3,26 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import Nav from 'app/components/Nav';
+import DownloadPopup from 'app/components/DownloadPopup';
 //import Nav from 'app/components/Nav';
 //import { hashHistory } from 'react-router';
 import * as actions from 'app/actions/actions';
 
 const bgImg = require('../images/Newtown_Creek_and_Factory.jpg');
 
-
 export class PamphletPage extends React.Component {
     constructor(props) {
         super(props);
         this.handleMenuClick = this.handleMenuClick.bind(this);
+        this.handleDownloadClick = this.handleDownloadClick.bind(this);
+    }
+
+    componentDidMount() {
+        this.elt.style.opacity = 0;
+        setTimeout(() => {
+            this.elt.style.opacity = 1;
+        }, 200);
+        //this.elt.style.visibility = 'visible';
     }
 
     handleMenuClick(e) {
@@ -26,8 +35,14 @@ export class PamphletPage extends React.Component {
         }
     }
 
+    handleDownloadClick(e) {
+        const { dispatch } = this.props;
+        e.preventDefault();
+        dispatch(actions.showDownloadPopup());
+    }
+
     renderArrows(pos) {
-        const allPages = this.props.pageInfo;
+        const allPages = this.props.allPages;
         let prevPage,
             nextPage;
         // Find previous and next page
@@ -64,11 +79,10 @@ export class PamphletPage extends React.Component {
     }
 
     render() {
-        const { nav } = this.props;
-        const pageData = this.props.pageInfo[this.props.params.page];
+        const { nav, pageData } = this.props;
         const position = parseInt(pageData.position, 10);
         return (
-            <div className='pamphlet-page'>
+            <div className='pamphlet-page' ref={(c) => { this.elt = c; }}>
                 <div className='bg'>
                     <img className='bg-img' src={bgImg} alt='factory in newtown creek' />
                 </div>
@@ -76,7 +90,7 @@ export class PamphletPage extends React.Component {
                     <p>{pageData.position}</p>
                     <h1>{pageData.header}</h1>
                     {pageData.subHeader && <p className='sub'><em>{pageData.subHeader}</em></p>}
-                    {pageData.downloadUrl && <button>Download</button>}
+                    {pageData.downloadUrl && <button onClick={this.handleDownloadClick}>Download</button>}
                 </div>
 
                 {this.renderArrows(position)}
@@ -98,15 +112,15 @@ export class PamphletPage extends React.Component {
 }
 
 PamphletPage.propTypes = {
-    pageInfo: React.PropTypes.object.isRequired,
-    params: React.PropTypes.object.isRequired,
+    allPages: React.PropTypes.object.isRequired,
+    //params: React.PropTypes.object.isRequired,
     dispatch: React.PropTypes.func.isRequired,
     nav: React.PropTypes.object.isRequired
 };
 
 export default connect((state) => {
     return {
-        pageInfo: state.pageInfo,
+        //pageInfo: state.pageInfo,
         nav: state.nav
     };
 })(PamphletPage);

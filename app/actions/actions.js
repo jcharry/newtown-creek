@@ -52,3 +52,13 @@ export const hideNav = () => {
         type: 'HIDE_NAV'
     };
 };
+export const showDownloadPopup = () => {
+    return {
+        type: 'SHOW_DOWNLOAD_POPUP'
+    };
+};
+export const hideDownloadPopup = () => {
+    return {
+        type: 'HIDE_DOWNLOAD_POPUP'
+    };
+};

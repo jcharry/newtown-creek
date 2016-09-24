@@ -2,14 +2,15 @@
 import * as redux from 'redux';
 import thunk from 'redux-thunk';
 
-import { landingPageReducer, loadingReducer, navReducer, pageInfoReducer } from 'app/reducers/reducers';
+import { landingPageReducer, loadingReducer, navReducer, pageInfoReducer, popupReducer } from 'app/reducers/reducers';
 
 const configure = (initialState = {}) => {
     const reducer = redux.combineReducers({
         isLoading: loadingReducer,
         nav: navReducer,
         isHomeVisible: landingPageReducer,
-        pageInfo: pageInfoReducer
+        pageInfo: pageInfoReducer,
+        popup: popupReducer
     });
 
     const store = redux.createStore(reducer, initialState, redux.compose(

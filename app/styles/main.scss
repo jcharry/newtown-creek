@@ -7,6 +7,7 @@
 @import 'components/home';
 @import 'components/intro';
 @import 'components/pamphlet';
+@import 'components/download-popup';
 
 
 /* latin-ext */
@@ -27,6 +28,7 @@
 }
 
 body {
+    background-color: lightgrey;
     font-family: Georgia;
     padding: 0;
     margin: 0;

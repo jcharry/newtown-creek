@@ -7,6 +7,13 @@ import * as actions from 'app/actions/actions';
 import NavItem from 'app/components/NavItem';
 
 export class Nav extends React.Component {
+    componentDidMount() {
+        this.elt.style.opacity = 0;
+        setTimeout(() => {
+            this.elt.style.opacity = 1;
+        }, 100);
+    }
+
     render() {
         const { nav, pageInfo, dispatch } = this.props;
 
@@ -15,6 +22,7 @@ export class Nav extends React.Component {
             return buttons.map((text) => {
                 return (
                     <button
+                        key={text}
                         className={nav.navLocation === text ? 'nav-button active' : 'nav-button'}
                         onClick={() => { dispatch(actions.setNavLocation(text)); }}
                     >{text}</button>
@@ -64,7 +72,7 @@ export class Nav extends React.Component {
         };
 
         return (
-            <div className='nav'>
+            <div className='nav' ref={(c) => { this.elt = c; }}>
                 <div className='nav-top'>
                     {renderNavButtons()}
                 </div>
