@@ -87,7 +87,7 @@ export class PamphletPage extends React.Component {
             style.filter = 'blur(5px)';
         }
         return (
-            <div className='pamphlet-page' ref={(c) => { this.elt = c; }} style={style} >
+            <div className={nav.visible ? 'pamphlet-page pamphlet-page-fixed' : 'pamphlet-page'} ref={(c) => { this.elt = c; }} style={style} >
                 <div className='bg'>
                     <img className='bg-img' src={bgImg} alt='factory in newtown creek' />
                 </div>
@@ -107,7 +107,7 @@ export class PamphletPage extends React.Component {
                     <p>They are ecosystemic, cultural, and global trade connectors. Their histories can provide pathways to embodied understanding of health, development, pollution, and collapse. Newtown Creek is a waterway home to ribbed mussels, killifish, and muskrats. It also happens to be one of the worst sites</p>
                     <p>They are ecosystemic, cultural, and global trade connectors. Their histories can provide pathways to embodied understanding of health, development, pollution, and collapse. Newtown Creek is a waterway home to ribbed mussels, killifish, and muskrats. It also happens to be one of the worst sites</p>
                 </div>
-                <button className={nav.visible ? 'menu hamburger hamburger--spring is-active' : 'menu hamburger hamburger--spring'} type='button' onClick={this.handleMenuClick}>
+                <button className={nav.visible ? 'menu hamburger hamburger--spring is-active menu-fixed' : 'menu hamburger hamburger--spring'} type='button' onClick={this.handleMenuClick}>
                     <span className='hamburger-box'>
                         <span className={nav.visible ? 'hamburger-inner menu-active' : 'hamburger-inner'} />
                     </span>

@@ -7,11 +7,11 @@ import DownloadPopup from 'app/components/DownloadPopup';
 export class PamphletContainer extends React.Component {
     render() {
         const pageData = this.props.pageInfo[this.props.params.page];
-        const { popup } = this.props;
+        const { popup, nav } = this.props;
         return (
-            <div className='pamphlet-container'>
+            <div className={nav.visible ? 'pamphlet-container pamphlet-container-fixed' : 'pamphlet-container'}>
                 <PamphletPage blurred={popup} pageData={pageData} allPages={this.props.pageInfo}/>
-                <DownloadPopup visible={popup}/>
+                <DownloadPopup pageData={pageData} visible={popup}/>
             </div>
         );
     }
@@ -20,6 +20,7 @@ export class PamphletContainer extends React.Component {
 export default connect((state) => {
     return {
         pageInfo: state.pageInfo,
-        popup: state.popup
+        popup: state.popup,
+        nav: state.nav
     }
 })(PamphletContainer)

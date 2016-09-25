@@ -1,3 +1,12 @@
+.pamphlet-container-fixed {
+    /*width: 100vw;*/
+    /*position: fixed;*/
+}
+
+/*.pamphlet-page-fixed {*/
+    /*overflow-x: hidden;*/
+    /*position: fixed;*/
+/*}*/
 .pamphlet-page {
     opacity: 0;
     transition: filter 0.5s, opacity 1s;
@@ -119,12 +128,16 @@
         z-index: 10;
     }
 
+    .menu-fixed {
+        position: fixed;
+    }
+
     .menu-active::before, .menu-active::after {
         background-color: white;
     }
 
     .nav-container {
-        position: absolute;
+        position: fixed;
         top: 0;
         bottom: 0;
         right: 0;

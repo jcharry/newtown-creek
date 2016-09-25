@@ -12,7 +12,22 @@ export default {
         position: '02',
         url: '02-twitchers-spotters',
         active: false,
-        downloadUrl: 'abcd'
+        downloadUrl: 'true',
+        popupContent: [
+            {
+                linkText: 'Download',
+                restOfSentence: 'the pamphlet and go identify things at the Newton Creek Nature Walk',
+                url: 'pdf.pdf'
+            },
+            {
+                linkText: 'Go on the audio walk',
+                restOfSentence: 'lorem ipsum dolor sit'
+            },
+            {
+                linkText: 'Attend our next event',
+                restOfSentence: 'on November 21, 2016'
+            }
+        ]
     },
     '03-phantom-smells': {
         header: 'The Order of the Phantom Smells',

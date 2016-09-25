@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import PopupItem from 'app/components/PopupItem';
+
 import * as actions from 'app/actions/actions';
 
 export class DownloadPopup extends React.Component {
@@ -15,32 +17,27 @@ export class DownloadPopup extends React.Component {
     }
     render() {
         const style = {};
-        const { visible } = this.props;
+        const { visible, pageData } = this.props;
         if (visible) {
             style.visibility = 'visible';
         } else {
             style.visibility = 'hidden';
         }
+
         return (
             <div className='download-popup' style={style}>
                 <div className='bg'>
                     <h2>Want to Participate? Here's how:</h2>
                     <ol>
-                        <li>
-                            <p><span className='clickable'>Download</span> the pamphlet and go identify things at Newtown Creek</p>
-                        </li>
-                        <li>
-                            <p><span className='clickable'>Go on the audio walk</span> lorem ipsum dolor sit</p>
-                        </li>
-                        <li>
-                            <p><span className='clickable'>Attend our next event</span> on November 21, 2016</p>
-                        </li>
+                        {pageData.popupContent && pageData.popupContent.map((item) => {
+                            return <PopupItem url={item.url} linkText={item.linkText} rest={item.restOfSentence} />;
+                        })}
                     </ol>
-                <button className='download-popup-close-btn is-active hamburger hamburger--spring' type='button' onClick={this.handleClick}>
-                    <span className='hamburger-box'>
-                        <span className='hamburger-inner'/>
-                    </span>
-                </button>
+                    <button className='download-popup-close-btn is-active hamburger hamburger--spring' type='button' onClick={this.handleClick}>
+                        <span className='hamburger-box'>
+                            <span className='hamburger-inner' />
+                        </span>
+                    </button>
                 </div>
             </div>
         );
@@ -49,7 +46,12 @@ export class DownloadPopup extends React.Component {
 
 DownloadPopup.propTypes = {
     visible: React.PropTypes.bool,
-    dispatch: React.PropTypes.func
+    dispatch: React.PropTypes.func,
+    pageData: React.PropTypes.object
 };
 
-export default connect()(DownloadPopup);
+export default connect((state) => {
+    return {
+        pageInfo: state.pageInfo
+    };
+})(DownloadPopup);
