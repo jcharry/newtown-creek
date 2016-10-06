@@ -1,6 +1,5 @@
 import React from 'react';
 //import * as redux from 'redux';
-//import { connect } from 'react-redux';
 //
 //import Nav from 'app/components/Nav';
 //import { hashHistory } from 'react-router';

@@ -51,10 +51,14 @@ export class Intro extends React.Component {
         //const { visible } = this.props;
         return (
             <div className='intro' ref={(c) => { this.elt = c; }}>
-                <div />
-                <img alt='Newtown Creek' src={bgImg} />
-                <h1>A FIELD GUIDE TO THE DARK ECOLOGIES OF NEWTOWN CREEK</h1>
-                <button onClick={this.skipIntro}>SKIP INTRO</button>
+                <div className='color-bg' />
+                <div className='intro-bg'>
+                    <img alt='Newtown Creek' src={bgImg} />
+                </div>
+                <div className='intro-text'>
+                    <h1>A FIELD GUIDE TO THE DARK ECOLOGIES OF NEWTOWN CREEK</h1>
+                </div>
+                <button className='skip-intro' onClick={this.skipIntro}>SKIP INTRO</button>
             </div>
         );
     }

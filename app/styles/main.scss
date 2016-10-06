@@ -9,7 +9,14 @@
 @import 'components/intro';
 @import 'components/pamphlet';
 @import 'components/download-popup';
+@import 'components/oil-barge-svg';
 
+/* Responsive stuff.
+ * see here - https://css-tricks.com/snippets/html/responsive-meta-tag/
+ */
+@-ms-viewport{
+  width: device-width;
+}
 
 /* latin-ext */
 @font-face {

@@ -30,9 +30,6 @@ export class Landing extends React.Component {
     render() {
         const { isHomeVisible, isLoading } = this.props;
         console.log(isLoading);
-        //const renderPage = function() {
-            //return isHomeVisible ? <Home key='home'/> : <Intro key='intro'/>
-        //}
         return (
             <div className='landing' ref={(c) => { this.elt = c; }}>
                 <Home visible={isHomeVisible} />

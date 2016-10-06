@@ -10,17 +10,24 @@ export class PamphletContainer extends React.Component {
         const { popup, nav } = this.props;
         return (
             <div className={nav.visible ? 'pamphlet-container pamphlet-container-fixed' : 'pamphlet-container'}>
-                <PamphletPage blurred={popup} pageData={pageData} allPages={this.props.pageInfo}/>
-                <DownloadPopup pageData={pageData} visible={popup}/>
+                <PamphletPage blurred={popup} pageData={pageData} allPages={this.props.pageInfo} />
+                <DownloadPopup pageData={pageData} visible={popup} />
             </div>
         );
     }
 }
+
+PamphletContainer.propTypes = {
+    pageInfo: React.PropTypes.object.isRequired,
+    popup: React.PropTypes.bool.isRequired,
+    params: React.PropTypes.object.isRequired,
+    nav: React.PropTypes.object.isRequired
+};
 
 export default connect((state) => {
     return {
         pageInfo: state.pageInfo,
         popup: state.popup,
         nav: state.nav
-    }
-})(PamphletContainer)
+    };
+})(PamphletContainer);

@@ -37,6 +37,11 @@
             padding: 0 1rem 0 1rem;
             color: dimgrey;
             margin: 0;
+
+            span {
+                font-size: 1.2rem;
+                font-style: italic;
+            }
         }
         p:last-child {
             margin-top: 10px;
@@ -71,7 +76,7 @@
             display: block;
             flex: inherit;
             p {
-                font-size: 9pt;
+                font-size: 1rem;
             }
             padding-bottom: 10px;
         }

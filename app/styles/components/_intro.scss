@@ -2,17 +2,29 @@
     position: absolute;
     top: 0;
     left: 0;
+    margin: 0;
+    padding: 0;
     display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
+
+    .intro-text {
+        display: flex;
+        flex-grow: 3;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+    }
 
     /*transition: visibility 0s linear 0.5s, opacity 0.5s;*/
     transition: opacity 0.5s;
 
     /* Background Div for color overlay */
-    > div:first-child {
+    .color-bg {
         position: fixed;
         top: 0;
         left: 0;
@@ -25,10 +37,10 @@
         width: 50vw;
         text-align: center;
     }
-    button {
-        position: absolute;
-        bottom: 20px;
-        margin: 0;
+    .skip-intro {
+        /*position: absolute;*/
+        /*bottom: 20px;*/
+        margin: 0 0 10px 0;
         padding: 1rem;
         border: 1px solid dimgrey;
         cursor: pointer;
@@ -37,7 +49,7 @@
         background: transparent;
         height: auto;
     }
-    button:hover {
+    .skip-intro:hover {
         background-color: rgba(70, 70, 70, 0.5);
         color: white;
         opacity: 0.7;
@@ -46,17 +58,24 @@
         color: rgba(70, 70, 70, 1);
     }
 
-    img {
+    .intro-bg {
         position: fixed;
-        top: 0;
-        left: 0;
-
-        opacity: 0.5;
-
-        width: 100vw;
-        min-width: 1378px;
-        min-height: 100vh;
-        filter: blur(8px);
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background-color: lightgrey;
         z-index: -1;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            min-width: 50%;
+            min-height: 50%;
+            opacity: 0.1;
+        }
     }
 }

@@ -36,6 +36,9 @@
         justify-content: space-around;
         padding: 1.5rem 0 0 0;
 
+        .nav-button:hover {
+            background-color: rgba(70, 70, 70, 0.5);
+        }
         .nav-button {
             /*background: transparent;*/
             /*border: none;*/
@@ -68,7 +71,7 @@
             flex-direction: row;
         }
         a:active {
-            background-color:lightgrey;
+            background-color:rgba(50, 50, 50, 0.5);
         }
 
         .nav-left {

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PopupItem from 'app/components/PopupItem';
 
 import * as actions from 'app/actions/actions';
+import { randString } from 'app/extras/helpers';
 
 export class DownloadPopup extends React.Component {
     constructor(props) {
@@ -30,7 +31,7 @@ export class DownloadPopup extends React.Component {
                     <h2>Want to Participate? Here's how:</h2>
                     <ol>
                         {pageData.popupContent && pageData.popupContent.map((item) => {
-                            return <PopupItem url={item.url} linkText={item.linkText} rest={item.restOfSentence} />;
+                            return <PopupItem key={randString()} url={item.url} linkText={item.linkText} rest={item.restOfSentence} />;
                         })}
                     </ol>
                     <button className='download-popup-close-btn is-active hamburger hamburger--spring' type='button' onClick={this.handleClick}>

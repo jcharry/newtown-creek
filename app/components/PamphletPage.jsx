@@ -3,12 +3,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import Nav from 'app/components/Nav';
+//import CustomSvg from 'app/components/CustomSvg';
 //import DownloadPopup from 'app/components/DownloadPopup';
 //import Nav from 'app/components/Nav';
 //import { hashHistory } from 'react-router';
 import * as actions from 'app/actions/actions';
+import { randString } from 'app/extras/helpers';
 
-const bgImg = require('../images/Newtown_Creek_and_Factory.jpg');
+import bgImg from '../images/Newtown_Creek_and_Factory.jpg';
+import leftarrow from '../images/leftarrow.png';
+import rightarrow from '../images/rightarrow.png';
 
 export class PamphletPage extends React.Component {
     constructor(props) {
@@ -62,7 +66,7 @@ export class PamphletPage extends React.Component {
                         <p>{prevPage.header}</p>
                     </div>
                     <div className='arrow-img'>
-                        <p>&lt;</p>
+                        <img src={leftarrow} alt='click to go to previous page' />
                     </div>
                 </Link>}
                 {nextPage && <Link className='arrow-right' to={`experience/${nextPage.url}`}>
@@ -71,7 +75,7 @@ export class PamphletPage extends React.Component {
                         <p>{nextPage.header}</p>
                     </div>
                     <div className='arrow-img'>
-                        <p>&gt;</p>
+                        <img src={rightarrow} alt='click to go to next page' />
                     </div>
                 </Link>}
             </div>
@@ -95,17 +99,21 @@ export class PamphletPage extends React.Component {
                     <p>{pageData.position}</p>
                     <h1>{pageData.header}</h1>
                     {pageData.subHeader && <p className='sub'><em>{pageData.subHeader}</em></p>}
-                    {pageData.downloadUrl && <button onClick={this.handleDownloadClick}>Download</button>}
+                    {pageData.hasPopup && <button onClick={this.handleDownloadClick}>{pageData.popupButtonText}</button>}
                 </div>
 
                 {this.renderArrows(position)}
                 <div className='content'>
-                    <h2>Urban Rivers are arteries</h2>
-                    <p>They are ecosystemic, cultural, and global trade connectors. Their histories can provide pathways to embodied understanding of health, development, pollution, and collapse. Newtown Creek is a waterway home to ribbed mussels, killifish, and muskrats. It also happens to be one of the worst sites</p>
-                    <p>They are ecosystemic, cultural, and global trade connectors. Their histories can provide pathways to embodied understanding of health, development, pollution, and collapse. Newtown Creek is a waterway home to ribbed mussels, killifish, and muskrats. It also happens to be one of the worst sites</p>
-                    <p>They are ecosystemic, cultural, and global trade connectors. Their histories can provide pathways to embodied understanding of health, development, pollution, and collapse. Newtown Creek is a waterway home to ribbed mussels, killifish, and muskrats. It also happens to be one of the worst sites</p>
-                    <p>They are ecosystemic, cultural, and global trade connectors. Their histories can provide pathways to embodied understanding of health, development, pollution, and collapse. Newtown Creek is a waterway home to ribbed mussels, killifish, and muskrats. It also happens to be one of the worst sites</p>
-                    <p>They are ecosystemic, cultural, and global trade connectors. Their histories can provide pathways to embodied understanding of health, development, pollution, and collapse. Newtown Creek is a waterway home to ribbed mussels, killifish, and muskrats. It also happens to be one of the worst sites</p>
+                    {pageData.pageContent && pageData.pageContent.map((content) => {
+                        const Tag = content.tag;
+                        if (Tag === 'svg') {
+                            return content.content;
+                        }
+                        if (Tag === 'img') {
+                            return <img key={randString()} alt={content.alt && content.alt} src={content.src} />;
+                        }
+                        return <Tag key={randString()}>{content.text}</Tag>;
+                    })}
                 </div>
                 <button className={nav.visible ? 'menu hamburger hamburger--spring is-active menu-fixed' : 'menu hamburger hamburger--spring'} type='button' onClick={this.handleMenuClick}>
                     <span className='hamburger-box'>
@@ -119,6 +127,9 @@ export class PamphletPage extends React.Component {
     }
 
 }
+                    //{pageData.pageContent && pageData.pageContent.map((content) => {
+                        //return content;
+                    //})}
 
 PamphletPage.propTypes = {
     allPages: React.PropTypes.object.isRequired,
