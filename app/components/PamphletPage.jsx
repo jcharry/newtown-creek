@@ -1,7 +1,7 @@
 import React from 'react';
 //import * as redux from 'redux';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
+import Link from 'react-router/lib/Link';
 import Nav from 'app/components/Nav';
 //import CustomSvg from 'app/components/CustomSvg';
 //import DownloadPopup from 'app/components/DownloadPopup';

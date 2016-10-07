@@ -24,16 +24,12 @@ export class Intro extends React.Component {
     componentDidUpdate(prevProps) {
         const { visible } = this.props;
         if (visible !== prevProps.visible) {
-            console.log('intro should update');
             if (visible) {
-                console.log('intro should appear');
                 this.elt.style.visibility = 'visible';
                 this.elt.style.opacity = 1;
             } else {
-                console.log('intro should disappear');
                 this.elt.style.opacity = 0;
                 setTimeout(() => {
-                    console.log(this.elt);
                     this.elt.style.visibility = 'hidden';
                 }, 500);
             }
@@ -43,7 +39,6 @@ export class Intro extends React.Component {
     skipIntro(e) {
         const { dispatch } = this.props;
         e.preventDefault();
-        console.log('go to home');
         dispatch(actions.showHome());
     }
 

@@ -1,16 +1,7 @@
 import React from 'react';
-//import * as redux from 'redux';
 import { connect } from 'react-redux';
 import Home from 'app/components/Home';
 import Intro from 'app/components/Intro';
-//import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-//import Nav from 'app/components/Nav';
-//import { hashHistory } from 'react-router';
-//import * as actions from 'app/actions/actions';
-
-//import * as actions from 'app/actions/actions';
-
-//const bgImg = require('../images/Newtown_Creek_and_Factory.jpg');
 
 export class Landing extends React.Component {
 

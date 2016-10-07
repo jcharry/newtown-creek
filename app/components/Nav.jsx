@@ -1,17 +1,37 @@
 import React from 'react';
 import { connect } from 'react-redux';
-//import { Link } from 'react-router';
-//import * as redux from 'redux';
-//import { hashHistory } from 'react-router';
 import * as actions from 'app/actions/actions';
 import NavItem from 'app/components/NavItem';
 
 export class Nav extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.handleMouseEnter = this.handleMouseEnter.bind(this);
+        this.handleMouseLeave = this.handleMouseLeave.bind(this);
+    }
     componentDidMount() {
         this.elt.style.opacity = 0;
         setTimeout(() => {
             this.elt.style.opacity = 1;
         }, 100);
+    }
+
+    componentWillUnmount() {
+        const { dispatch } = this.props;
+        dispatch(actions.hideNav());
+    }
+
+    handleMouseEnter(e, position) {
+        const { dispatch } = this.props;
+        e.preventDefault();
+        dispatch(actions.setHoverItem(position));
+    }
+
+    handleMouseLeave(e) {
+        const { dispatch } = this.props;
+        e.preventDefault();
+        dispatch(actions.clearHoverItem());
     }
 
     render() {
@@ -36,6 +56,8 @@ export class Nav extends React.Component {
                 return (
                     <NavItem
                         header={item.header}
+                        handleMouseEnter={this.handleMouseEnter}
+                        handleMouseLeave={this.handleMouseLeave}
                         subHeader={item.subHeader}
                         position={item.position}
                         url={item.url}

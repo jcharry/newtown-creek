@@ -1,6 +1,7 @@
 /* eslint
    "react/jsx-first-prop-new-line": "off",
-   "max-len": "off"
+   "max-len": "off",
+   "class-methods-use-this": "off"
    */
 import React from 'react';
 
