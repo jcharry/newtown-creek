@@ -29,7 +29,7 @@ function NavItem(props) {
             onMouseEnter={(e) => { handleMouseEnter(e, position); }}
             onMouseLeave={handleMouseLeave}
         >
-            <Link to={`/experience/${url}`} >
+            <Link to={`${url}`} >
                 <div className='nav-left'>
                     <p>{position}&nbsp;&nbsp;/</p>
                 </div>

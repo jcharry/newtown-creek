@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var path = require('path');
 
 // Heroku passes a port # as an environment var
 const PORT = process.env.PORT || 8080;
@@ -10,6 +11,10 @@ process.env.PWD = process.cwd();
 
 app.use(express.static('dist'));
 //app.use(express.static(process.env.PWD + '/static'));
+
+app.get('*', function (request, response){
+  response.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+});
 
 app.listen(PORT, function() {
     console.log('listening on port ' + PORT);

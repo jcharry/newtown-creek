@@ -60,7 +60,7 @@ export class PamphletPage extends React.Component {
         });
         return (
             <div className='arrows'>
-                {prevPage && <Link className='arrow-left' to={`experience/${prevPage.url}`}>
+                {prevPage && <Link className='arrow-left' to={`${prevPage.url}`}>
                     <div className='arrow-title'>
                         <p>{prevPage.position}&nbsp;&nbsp;/</p>
                         <p>{prevPage.header}</p>
@@ -69,7 +69,7 @@ export class PamphletPage extends React.Component {
                         <img src={leftarrow} alt='click to go to previous page' />
                     </div>
                 </Link>}
-                {nextPage && <Link className='arrow-right' to={`experience/${nextPage.url}`}>
+                {nextPage && <Link className='arrow-right' to={`${nextPage.url}`}>
                     <div className='arrow-title'>
                         <p>{nextPage.position}&nbsp;&nbsp;/</p>
                         <p>{nextPage.header}</p>
