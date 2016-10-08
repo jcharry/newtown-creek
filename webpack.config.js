@@ -53,6 +53,7 @@ module.exports = {
     plugins: plugins,
     devServer: process.env.NODE_ENV === 'production' ? null : {
         contentBase: './dist',
-        hot: true
+        hot: true,
+        historyApiFallback: true
     }
 };
