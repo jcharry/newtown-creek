@@ -22,11 +22,24 @@ export class PamphletPage extends React.Component {
     }
 
     componentDidMount() {
+        //const { dispatch } = this.props;
+        //dispatch(actions.hideNav());
+
         this.elt.style.opacity = 0;
         setTimeout(() => {
             this.elt.style.opacity = 1;
         }, 200);
         //this.elt.style.visibility = 'visible';
+    }
+
+    componentDidUpdate(prevProps) {
+        const { dispatch } = this.props;
+
+        // If the page data has changed, hide the nav (i.e. a user navigated
+        // to another pamphlet page by clicking a nav item)
+        if (prevProps.pageData.position !== this.props.pageData.position) {
+            dispatch(actions.hideNav());
+        }
     }
 
     handleMenuClick(e) {
@@ -139,9 +152,4 @@ PamphletPage.propTypes = {
     blurred: React.PropTypes.bool
 };
 
-export default connect((state) => {
-    return {
-        //pageInfo: state.pageInfo,
-        nav: state.nav
-    };
-})(PamphletPage);
+export default connect()(PamphletPage);

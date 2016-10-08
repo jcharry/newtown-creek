@@ -30,7 +30,7 @@ var configure = () => {
             template: './app/index.html'
         }),
         new CopyWebpackPlugin([
-            { from: './app/images/' }
+            { from: './app/images/', to: './images/' }
         ]),
         new webpack.DefinePlugin({
             'process.env': {

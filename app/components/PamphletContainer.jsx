@@ -10,7 +10,7 @@ export class PamphletContainer extends React.Component {
         const { popup, nav } = this.props;
         return (
             <div className={nav.visible ? 'pamphlet-container pamphlet-container-fixed' : 'pamphlet-container'}>
-                <PamphletPage blurred={popup} pageData={pageData} allPages={this.props.pageInfo} />
+                <PamphletPage nav={nav} blurred={popup} pageData={pageData} allPages={this.props.pageInfo} />
                 <DownloadPopup pageData={pageData} visible={popup} />
             </div>
         );

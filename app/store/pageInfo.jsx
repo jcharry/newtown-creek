@@ -28,7 +28,7 @@ export default {
             },
             {
                 tag: 'img',
-                src: 'img.jpg',
+                src: 'images/Newtown_Creek_and_Factory.jpg',
                 alt: 'test'
             },
             {
