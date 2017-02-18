@@ -1,6 +1,4 @@
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require('path');
 var envFile = require('node-env-file');
 
@@ -10,47 +8,8 @@ process.env.PWD = process.cwd();
 
 // In production (i.e. on heroku), we won't use an ENV file
 // instead we use a heroku environment variable with the same vars
-try {
-    envFile(path.join(process.env.PWD, 'config/' + process.env.NODE_ENV + '.env'));
-} catch(e) {
-}
 
 // Returns a concatenated list of plugins depending on
 // whether environment is development or production
-var configure = () => {
-
-    // All dev plugins go here
-    var dev = [
-        new webpack.HotModuleReplacementPlugin()
-    ];
-
-    // Shared plugins (i.e. both dev and prod) go here
-    var shared = [
-        new HtmlWebpackPlugin({
-            template: './app/index.html'
-        }),
-        new CopyWebpackPlugin([
-            { from: './app/images/', to: './images/' }
-        ]),
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-            }
-        })
-    ];
-
-    // Production plugins here
-    var prod = [
-        new webpack.optimize.UglifyJsPlugin({
-            compressor: {
-                warnings: false,
-            },
-        }),
-        new webpack.optimize.OccurenceOrderPlugin()
-    ];
-
-    // Pick which plugins to return
-    return process.env.NODE_ENV === 'production' ? shared.concat(prod) : shared.concat(dev);
-};
 
 module.exports = configure();

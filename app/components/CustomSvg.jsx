@@ -6,7 +6,7 @@ export class CustomSvg extends React.Component {
             <div>
                 {this.props.content}
             </div>
-        )
+        );
     }
 }
 

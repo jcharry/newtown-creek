@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from 'app/actions/actions';
 
-const bgImg = require('../images/Newtown_Creek_and_Factory.jpg');
+const bgImg = require('assets/Newtown_Creek_and_Factory.jpg');
 
 export class Intro extends React.Component {
     constructor(props) {

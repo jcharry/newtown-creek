@@ -1,0 +1,33 @@
+@import 'components/content-page/pamphlet-page-header';
+.pamphlet-page-content {
+    // margin: 0 8rem 0 8rem;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+
+    p {
+        line-height: 1.8rem;
+        width: 100%;
+    }
+
+    img {
+        margin: 1rem 0;
+    }
+
+    p:last-child {
+        margin-bottom: 8rem;
+    }
+
+    @include small {
+        width: 75%;
+    }
+
+    @include medium {
+        width: 60%;
+    }
+    @include large {
+        width: 40%;
+    }
+}
+

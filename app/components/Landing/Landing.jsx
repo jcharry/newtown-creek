@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Home from 'app/components/Home';
-import Intro from 'app/components/Intro';
+import Home from 'app/components/Landing/Home';
+import Intro from 'app/components/Landing/Intro';
+import BlueBorder from 'app/components/Elements/BlueBorder';
 
 export class Landing extends React.Component {
 
@@ -23,6 +24,7 @@ export class Landing extends React.Component {
         console.log(isLoading);
         return (
             <div className='landing' ref={(c) => { this.elt = c; }}>
+                <BlueBorder />
                 <Home visible={isHomeVisible} />
                 <Intro visible={!isHomeVisible} />
             </div>

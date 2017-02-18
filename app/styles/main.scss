@@ -2,14 +2,18 @@
 @import 'base/components';
 @import 'base/hamburgers/hamburgers';
 
+@import 'components/nav/nav';
 
-@import 'components/landing';
-@import 'components/nav';
-@import 'components/home';
-@import 'components/intro';
-@import 'components/pamphlet';
+@import 'components/landing/landing';
+
+@import 'components/content-page/pamphlet';
 @import 'components/download-popup';
 @import 'components/oil-barge-svg';
+
+@import 'components/elements/fsde-logo';
+@import 'components/elements/blue-border';
+@import 'components/elements/mailing-list-box';
+@import 'components/elements/interactive-map';
 
 /* Responsive stuff.
  * see here - https://css-tricks.com/snippets/html/responsive-meta-tag/
@@ -36,8 +40,12 @@
 }
 
 body {
-    background-color: lightgrey;
+    background-color: $page-color;
     padding: 0;
     margin: 0;
-    font-family: 'Raleway';
+    font-family: $font-familyH;
+}
+
+h1, h2, h3, h4, p {
+    color: $dark-text-color;
 }

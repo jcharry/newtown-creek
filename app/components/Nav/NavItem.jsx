@@ -29,18 +29,21 @@ function NavItem(props) {
             onMouseEnter={(e) => { handleMouseEnter(e, position); }}
             onMouseLeave={handleMouseLeave}
         >
-            <Link to={`${url}`} >
+            <Link className='nav-link' to={`${url}`} >
                 <div className='nav-left'>
-                    <p>{position}&nbsp;&nbsp;/</p>
+                    <p className='nav-item-number'>{position} </p>
                 </div>
                 <div className='nav-right'>
-                    <h1>{header}</h1>
-                    <h2>{subHeader}</h2>
+                    <h2>{header}</h2>
                 </div>
             </Link>
         </div>
     );
 }
+
+NavItem.defaultProps = {
+    subHeader: ''
+};
 
 NavItem.propTypes = {
     header: React.PropTypes.string.isRequired,

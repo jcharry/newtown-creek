@@ -1,0 +1,70 @@
+.mailing-list-box {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    padding-left: 5vw;
+    
+    h3 {
+        font-size: 1rem;
+        color: white;
+        padding-right: 0.5rem;
+    }
+
+    .input {
+        height: 40px;
+        border: 3px solid white;
+        color: white;
+        font-size: 0.8rem;
+        display:flex;
+
+        input {
+            margin: 0;
+            padding: 0 1rem;
+            flex: 3 1 70%;
+            height: 100%;
+            line-height: 100%;
+            border: none;
+            background-color: $orange;
+            color: white;
+            font-size: 1rem;
+        }
+
+        button {
+            height: 100%;
+            flex: 1 1 30%;
+            width: 100px;
+            background-color: white;
+            color: $blue;
+            border: none;
+            font-size: 1rem;
+            color: $orange;
+        }
+    }
+
+    @include small {
+        flex-direction: column;
+
+        h3 {
+            font-size: 0.7rem;
+        }
+        input {
+            font-size: 0.5rem;
+        }
+        button {
+            font-size: 0.7rem;
+        }
+    }
+    @include medium {
+        flex-direction: row;
+        h3 {
+            margin-right: 20px;
+        }
+    }
+    @include large {
+        flex-direction: row;
+        h3 {
+            margin-right: 20px;
+        }
+    }
+}

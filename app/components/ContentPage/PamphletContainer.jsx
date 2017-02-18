@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import PamphletPage from 'app/components/PamphletPage';
+import PamphletPage from 'app/components/ContentPage/PamphletPage';
 import DownloadPopup from 'app/components/DownloadPopup';
 
 export class PamphletContainer extends React.Component {

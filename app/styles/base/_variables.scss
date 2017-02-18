@@ -1,7 +1,6 @@
 $page-overlay-background-color: rgba(0,0,0,0.6);
 $button-background-color: rgba(100,100,100,0.8);
 $landing-text-color: lightgrey;
-
 $page-background-color: #551A8B;
 $purple-color: #551A8B;
 $purple-color-with-opacity: rgba(85, 26, 139, 0.8);
@@ -11,3 +10,38 @@ $dark-cyan: #00404a;
 $some-other-purple: #7a0099;
 $link-color: #96d7ff;
 $body-font-color: lightgray;
+
+
+$font-familyH: Helvetica;
+
+$header-color: #3366B3;
+$blue: #3366B3;
+$deep-blue: #22477E;
+$dark-text-color: #2A3440;
+$page-color: #FEFFF0;
+$orange: #E55943;
+$highlight-color: #F9FC39;
+
+// Screen Sizes
+// $small: "(max-width: 768px)";
+// $med: "(min-width: 768px) and (max-width: 1023px)";
+// $large: "(min-width: 1023px)";
+$small-width: 380px;
+$med-width: 768px;
+$large-width: 1023px;
+@mixin small {
+    @media (max-width: #{$small-width}) {
+        @content;
+    }
+}
+@mixin medium {
+  @media (min-width: #{$small-width + 1}) and (max-width: #{$large-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: #{$large-width}) {
+    @content;
+  }
+}

@@ -2,17 +2,17 @@ import React from 'react';
 //import * as redux from 'redux';
 import { connect } from 'react-redux';
 import Link from 'react-router/lib/Link';
-import Nav from 'app/components/Nav';
-//import CustomSvg from 'app/components/CustomSvg';
-//import DownloadPopup from 'app/components/DownloadPopup';
-//import Nav from 'app/components/Nav';
-//import { hashHistory } from 'react-router';
+import Nav from 'app/components/Nav/Nav';
+import Logo from 'app/components/Elements/Logo';
 import * as actions from 'app/actions/actions';
 import { randString } from 'app/extras/helpers';
+import HamburgerButton from 'app/components/Elements/HamburgerButton';
+import BlueBorder from 'app/components/Elements/BlueBorder';
+import MailingListBox from 'app/components/Elements/MailingListBox';
 
-import bgImg from '../images/Newtown_Creek_and_Factory.jpg';
-import leftarrow from '../images/leftarrow.png';
-import rightarrow from '../images/rightarrow.png';
+import bgImg from 'assets/Newtown_Creek_and_Factory.jpg';
+import leftarrow from 'assets/leftarrow.png';
+import rightarrow from 'assets/rightarrow.png';
 
 export class PamphletPage extends React.Component {
     constructor(props) {
@@ -22,14 +22,10 @@ export class PamphletPage extends React.Component {
     }
 
     componentDidMount() {
-        //const { dispatch } = this.props;
-        //dispatch(actions.hideNav());
-
         this.elt.style.opacity = 0;
         setTimeout(() => {
             this.elt.style.opacity = 1;
         }, 200);
-        //this.elt.style.visibility = 'visible';
     }
 
     componentDidUpdate(prevProps) {
@@ -62,6 +58,7 @@ export class PamphletPage extends React.Component {
         const allPages = this.props.allPages;
         let prevPage,
             nextPage;
+
         // Find previous and next page
         Object.keys(allPages).forEach((key) => {
             const currentPage = parseInt(allPages[key].position, 10);
@@ -74,21 +71,19 @@ export class PamphletPage extends React.Component {
         return (
             <div className='arrows'>
                 {prevPage && <Link className='arrow-left' to={`${prevPage.url}`}>
-                    <div className='arrow-title'>
-                        <p>{prevPage.position}&nbsp;&nbsp;/</p>
-                        <p>{prevPage.header}</p>
-                    </div>
                     <div className='arrow-img'>
                         <img src={leftarrow} alt='click to go to previous page' />
                     </div>
+                    <div className='arrow-title'>
+                        <p>{prevPage.header}</p>
+                    </div>
                 </Link>}
                 {nextPage && <Link className='arrow-right' to={`${nextPage.url}`}>
-                    <div className='arrow-title'>
-                        <p>{nextPage.position}&nbsp;&nbsp;/</p>
-                        <p>{nextPage.header}</p>
-                    </div>
                     <div className='arrow-img'>
                         <img src={rightarrow} alt='click to go to next page' />
+                    </div>
+                    <div className='arrow-title'>
+                        <p>{nextPage.header}</p>
                     </div>
                 </Link>}
             </div>
@@ -103,38 +98,25 @@ export class PamphletPage extends React.Component {
         if (blurred) {
             style.filter = 'blur(5px)';
         }
+
+
         return (
             <div className={nav.visible ? 'pamphlet-page pamphlet-page-fixed' : 'pamphlet-page'} ref={(c) => { this.elt = c; }} style={style} >
-                <div className='bg'>
-                    <img className='bg-img' src={bgImg} alt='factory in newtown creek' />
-                </div>
+                <BlueBorder />
+                <Link to='/'><Logo /></Link>
                 <div className='pamphlet-page-header'>
-                    <p>{pageData.position}</p>
                     <h1>{pageData.header}</h1>
-                    {pageData.subHeader && <p className='sub'><em>{pageData.subHeader}</em></p>}
-                    {pageData.hasPopup && <button onClick={this.handleDownloadClick}>{pageData.popupButtonText}</button>}
+                    {pageData.subHeader && <p className='pamphlet-page-subheader'>{pageData.subHeader}</p>}
+                    {pageData.hasPopup && <button className='' onClick={this.handleDownloadClick}>{pageData.popupButtonText.toUpperCase()}</button>}
+                </div>
+                {pageData.pageContent && pageData.pageContent}
+                <HamburgerButton handleClick={this.handleMenuClick} open={nav.visible}/>
+                {nav.visible && <div className='nav-container'><Nav /></div> }
+                {this.renderArrows(position)}
+                <div className='footer fixed-bottom'>
+                    <MailingListBox />
                 </div>
 
-                {this.renderArrows(position)}
-                <div className='content'>
-                    {pageData.pageContent && pageData.pageContent.map((content) => {
-                        const Tag = content.tag;
-                        if (Tag === 'svg') {
-                            return content.content;
-                        }
-                        if (Tag === 'img') {
-                            return <img key={randString()} alt={content.alt && content.alt} src={content.src} />;
-                        }
-                        return <Tag key={randString()}>{content.text}</Tag>;
-                    })}
-                </div>
-                <button className={nav.visible ? 'menu hamburger hamburger--spring is-active menu-fixed' : 'menu hamburger hamburger--spring'} type='button' onClick={this.handleMenuClick}>
-                    <span className='hamburger-box'>
-                        <span className={nav.visible ? 'hamburger-inner menu-active' : 'hamburger-inner'} />
-                    </span>
-                </button>
-                {nav.visible && <div className='nav-container'><Nav canClose /></div> }
-                <Link to='/' className='show-intro'>A FIELD GUIDE TO THE DARK ECOLOGIES OF NEWTOWN CREEK</Link>
             </div>
         );
     }
@@ -144,6 +126,9 @@ export class PamphletPage extends React.Component {
                         //return content;
                     //})}
 
+// PampletPage.defaultProps = {
+//
+// }
 PamphletPage.propTypes = {
     allPages: React.PropTypes.object.isRequired,
     dispatch: React.PropTypes.func.isRequired,

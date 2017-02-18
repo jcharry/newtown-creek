@@ -1,0 +1,36 @@
+.nav-item {
+    margin: 0.5rem 2rem;
+    transition: all 0.2s;
+    border-bottom: 2px solid $deep-blue;
+    &:last-child {
+        border: none;
+    }
+    > a:first-child {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+    }
+
+    &.blur {
+        filter: blur(2px);
+    }
+
+    .nav-item-number {
+        color: $deep-blue;
+    }
+    a:active {
+        background-color:rgba(50, 50, 50, 0.5);
+    }
+
+    .nav-left {
+        p {
+            // font-size: 1.5rem;
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+    }
+    .nav-right {
+        max-width: 350px;
+    }
+}

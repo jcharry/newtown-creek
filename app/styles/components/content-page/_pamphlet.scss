@@ -1,3 +1,4 @@
+@import 'components/content-page/pamphlet-page-content';
 .pamphlet-container-fixed {
     /*width: 100vw;*/
     /*position: fixed;*/
@@ -10,86 +11,16 @@
 .pamphlet-page {
     opacity: 0;
     transition: filter 0.5s, opacity 1s;
-
-    .bg {
-        position: fixed;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background-color: lightgrey;
-        z-index: -1;
-    }
-    .bg-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-        min-width: 50%;
-        min-height: 50%;
-        opacity: 0.1;
-    }
-    .pamphlet-page-header {
-        p, h1 {
-            padding: 1rem 1rem 0 1rem;
-            color: black;
-        }
-        p {
-            /*font-size: 2rem;*/
-            margin-top: 3rem;
-            margin-bottom: 0;
-        }
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        p {
-            border-bottom: 1px solid black;
-            font-size: 2rem;
-        }
-        button {
-            height: auto;
-            border: 1px solid dimgrey;
-            font-size: 0.8rem;
-            padding: 1rem;
-            margin-top: 10px;
-        }
-
-        .sub {
-            margin: 0;
-            font-size: 1rem;
-            border: none;
-            color: dimgrey;
-            padding: 1rem;
-        }
-        button:hover {
-            background-color: rgba(70, 70, 70, 0.5);
-            color: white;
-            opacity: 0.7;
-        }
-    }
-
-    .content {
-        margin: 3rem 8rem 0 8rem;
-
-        p {
-            color: dimgrey;
-        }
-
-        img {
-            width: 100%;
-        }
-    }
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 
     .arrows {
         div:last-child {
             margin-top: 10px;
         }
         p {
-            color: black;
+            color: $blue;
         }
         .arrow-left, .arrow-right {
             position: fixed;
@@ -100,8 +31,7 @@
             align-items: center;
             padding: 0 1rem 0 1rem;
             justify-content: center;
-            /*transition: all 0.5s;*/
-            width: 60px;
+            width: 100px;
             cursor: pointer;
         }
         .arrow-img img {
@@ -129,17 +59,22 @@
     .menu {
         cursor: pointer;
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 2rem;
+        right: 5vw;
         padding: 0;
-        margin: 3rem 2rem 0 0;
+        // margin: 3rem 2rem 0 0;
         width: 50px;
         height: 50px;
         z-index: 10;
+        transition: right 0.5s ease-in-out;
+        outline: none;
     }
 
-    .menu-fixed {
+    .menu-open {
         position: fixed;
+        right: 400px;
+        top: 0px;
+        background-color: $blue;
     }
 
     .menu-active::before, .menu-active::after {
@@ -161,7 +96,7 @@
     /*.show-intro {*/
 
     /*}*/
-    @media (max-width: 600px) {
+    @media (max-width: 500px) {
 
             .arrows {
                 .arrow-right, .arrow-left {
@@ -176,10 +111,10 @@
                 }
 
                 .arrow-left {
-                    padding-left: 2px;
+                    padding-left: 8px;
                 }
                 .arrow-right {
-                    padding-right: 2px;
+                    padding-right: 8px;
                 }
             }
 
@@ -208,6 +143,11 @@
                 right: 0;
                 bottom: 0;
                 width: 100vw;
+            }
+
+            .menu-open {
+                left: 0px;
+                background-color: transparent;
             }
     }
 }

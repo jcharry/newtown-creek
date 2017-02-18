@@ -7,8 +7,8 @@ import Route from 'react-router/lib/Route';
 import IndexRoute from 'react-router/lib/IndexRoute';
 import Router from 'react-router/lib/Router';
 
-import Landing from 'app/components/Landing';
-import PamphletContainer from 'app/components/PamphletContainer';
+import Landing from 'app/components/Landing/Landing';
+import PamphletContainer from 'app/components/ContentPage/PamphletContainer';
 
 const appHistory = useRouterHistory(createBrowserHistory)({ queryKey: false });
 

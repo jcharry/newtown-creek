@@ -1,4 +1,4 @@
-import pageInfo from 'app/store/pageInfo';
+import pageInfo from 'app/components/ContentPage/pageInfo';
 
 export const loadingReducer = (state = false, action) => {
     switch (action.type) {

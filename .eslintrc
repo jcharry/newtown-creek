@@ -30,8 +30,9 @@
         "import/no-unresolved": "off",
         "no-console": "off",
         "react/jsx-indent-props": ["error", 4],
-        "arrow-body-style": ["error", "always"],
+        "arrow-body-style": ["error", "as-needed"],
         "jsx-a11y/no-static-element-interactions": 0,
-        "react/prefer-stateless-function": "off"
+        "react/prefer-stateless-function": "off",
+        "import/extensions": "off"
     }
 }

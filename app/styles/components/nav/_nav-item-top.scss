@@ -1,0 +1,33 @@
+.nav-item-top {
+    // background: transparent;
+    // border: none;
+    color: white;
+    opacity: 0.4;
+    // height: 40px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.5s;
+    font-size: 0.6rem;
+    display:flex;
+    flex-direction: column;
+
+    &.active {
+        opacity: 1;
+    }
+
+    &:after {
+        content: '';
+        height: 2px;
+        width: 0px;
+        background: white;
+        transition: all 0.5s ease-in-out;
+    }
+
+    &:hover {
+        opacity: 1;
+
+        &:after {
+            width: 100%;
+        }
+    }
+}

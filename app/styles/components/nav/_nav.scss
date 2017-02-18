@@ -1,0 +1,62 @@
+@import 'components/nav/nav-item';
+@import 'components/nav/nav-item-top';
+@import 'components/nav/nav-content';
+
+.nav {
+    // min-height: 100vh;
+    min-height: 100%;
+    width: 100%;
+    padding-right: 17px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: opacity 1s, filter 1s;
+    overflow-y: scroll;
+    // top: 0;
+    // bottom: 0;
+
+    background-color: $blue;
+    h1 {
+        font-size: 1.2rem;
+    }
+    h2 {
+        font-size: 1.1rem;
+    }
+    h1, h2, p {
+        color: white;
+        margin: 1rem;
+    }
+
+    .nav-top {
+        // flex: 1 1 10%;
+        display: flex;
+        justify-content: space-around;
+        padding: 3rem 0 0 0;
+    }
+    .nav-bottom {
+        flex: 1 1 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        .who-we-are, .get-involved {
+            h1, p {
+                padding: 1rem;
+            }
+        }
+    }
+
+    .nav-close-button {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        right: 20px;
+        color: white;
+        top: 50px;
+        // font-size: 1rem;
+    }
+
+    @media (max-width: 600px) {
+
+    }
+}

@@ -1,0 +1,31 @@
+.nav-content {
+    margin: 1.5rem;
+
+    // Direct child
+    >p {
+        font-size: 0.8rem;
+        line-height: 1.4rem;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 1rem;
+
+        li {
+            padding: 0.5rem 0;
+            color: $page-color;
+            font-size: 0.9rem;
+            
+            a {
+                color: $page-color;
+                font-size: 0.9rem;
+                cursor: pointer;
+            }
+            a:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}
+

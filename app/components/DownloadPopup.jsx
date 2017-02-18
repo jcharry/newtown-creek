@@ -26,14 +26,10 @@ export class DownloadPopup extends React.Component {
         }
 
         return (
-            <div className='download-popup' style={style}>
-                <div className='bg'>
+            <div className='popup-container' style={style}>
+                <div className='popup'>
                     <h2>Want to Participate? Here's how:</h2>
-                    <ol>
-                        {pageData.popupContent && pageData.popupContent.map((item) => {
-                            return <PopupItem key={randString()} url={item.url} linkText={item.linkText} rest={item.restOfSentence} />;
-                        })}
-                    </ol>
+                    {pageData.popupContent}
                     <button className='download-popup-close-btn is-active hamburger hamburger--spring' type='button' onClick={this.handleClick}>
                         <span className='hamburger-box'>
                             <span className='hamburger-inner' />
