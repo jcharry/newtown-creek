@@ -13,7 +13,7 @@ app.use(express.static('dist'));
 //app.use(express.static(process.env.PWD + '/static'));
 
 app.get('*', function (request, response){
-  response.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+  response.sendFile(path.resolve(process.env.PWD, 'dist', 'index.html'));
 });
 
 app.listen(PORT, function() {
