@@ -44,7 +44,7 @@ export const navReducer = (state = { navLocation: 'The Field Guide', hoverItem: 
     }
 };
 
-export const landingPageReducer = (state = false, action) => {
+export const landingPageReducer = (state = true, action) => {
     switch (action.type) {
         case 'SHOW_HOME':
             return true;

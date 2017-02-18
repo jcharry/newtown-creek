@@ -3,6 +3,7 @@ import OilBargeSvg from 'app/components/OilBargeSvg';
 import Isvg from 'react-inlinesvg';
 import ReactSVG from 'react-svg';
 import InteractiveMap from 'app/components/Elements/InteractiveMap';
+import ExternalLink from 'app/components/Elements/ExternalLink';
 
 export default {
     '01-introduction': {
@@ -107,6 +108,59 @@ export default {
         position: '06',
         url: '06-bibliography',
         active: false,
-        hasPopup: false
+        hasPopup: false,
+        pageContent: (
+            <div className='pamphlet-page-content'>
+                <p><strong>This set of materials offers a theoretical and factual background for A Field Guide to the Dark Ecologies of Newtown Creek.  They are presented here for your further learning.</strong></p>
+                <ul className='bibliography'>
+                    <li>
+                        Newtown Creek Ecology
+                        <ul>
+                            <li>McLaughlin, John. "Newtown Creek : Restoration Ecology." Lecture, Newtown Creek CAG Meeting, New York, NY, February 6, 2014. Accessed January 15, 2017. <ExternalLink url='https://newtowncreekcag.files.wordpress.com/2014/02/oes-netown-cag-presentation.pdf'>https://newtowncreekcag.files.wordpress.com/2014/02/oes-netown-cag-presentation.pdf</ExternalLink>.</li>
+                            <li>"Newtown Creek Map." Map. Newtown Creek Alliance. 2016. Accessed January 15, 2017. <ExternalLink url='http://www.newtowncreekalliance.org/newtown-creek-map/'>http://www.newtowncreekalliance.org/newtown-creek-map/</ExternalLink>.</li>
+                            <li>"Newtown Creek Tidal Information." NOAA Tides & Currents. Accessed January 15, 2017. <ExternalLink url='https://tidesandcurrents.noaa.gov/'>https://tidesandcurrents.noaa.gov/</ExternalLink>.</li>
+                            <li>"NYS DEC Greenpoint Petroleum Remediation Project." New York State Department of Environmental Conservation . Accessed January 15, 2017. <ExternalLink url='http://nysdecgreenpoint.com/'>http://nysdecgreenpoint.com/</ExternalLink>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Newtown Creek History
+                        <ul>
+                            <li>Waxman, Mitch. Newtown Creek for the vulgarly curious. Brooklyn, NY: Newtownpentacle.com, 2010.</li>
+                            <li>"What Stenches Abound." The New York Times, March 27, 1881. Accessed January 15, 2017. <ExternalLink url='https://timesmachine.nytimes.com/timesmachine/1881/03/27/issue.html'>https://timesmachine.nytimes.com/timesmachine/1881/03/27/issue.html</ExternalLink>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        The Post-natural
+                        <ul>
+                            <li>Marris, Emma. Rambunctious Garden: Saving Nature in a Post-wild World. New York: Bloomsbury, 2011.</li>
+                            <li>Morton, Timothy. The Ecological Thought. Cambridge, MA: Harvard University Press, 2010.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Deep Time
+                        <ul>
+                            <li>Ellsworth, Elizabeth Ann, and Jamie Kruse. Making the Geologic Now: Responses to Material Conditions of Contemporary Life. Brooklyn, NY: Punctum Books, 2013.</li>
+                            <li>Howe, Cymene and Pandian, Anand. "Lexicon for an Anthropocene Yet Unseen." Theorizing the Contemporary, Cultural Anthropology website, January 22, 2016. <ExternalLink url='https://culanth.org/fieldsights/803-lexicon-for-an-anthropocene-yet-unseen'>https://culanth.org/fieldsights/803-lexicon-for-an-anthropocene-yet-unseen</ExternalLink></li>
+                            <li>McPhee, John. Basin and Range. New York: Farrar, Straus, Giroux, 1981.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Superfunds & Brownfields
+                        <ul>
+                            <li>"Meeting Notes & Presentations." Newtown Creek Community Advisory Group. April 24, 2016. Accessed January 15, 2017. <ExternalLink url='https://newtowncreekcag.wordpress.com/cag-notes/'>https://newtowncreekcag.wordpress.com/cag-notes/</ExternalLink>.</li>
+                            <li>"Newtown Creek Brownfield Opportunity Area (BOA)." Newtown Creek Alliance. Accessed January 15, 2017. <ExternalLink url='http://www.newtowncreekalliance.org/boa/'>http://www.newtowncreekalliance.org/boa/</ExternalLink>.</li>
+                            <li>"Newtown Creek Superfund Site Profile." Environmental Protection Agency. Accessed January 15, 2017. <ExternalLink url='http://cumulis.epa.gov/supercpad/cursites/csitinfo.cfm?id=0206282'>http://cumulis.epa.gov/supercpad/cursites/csitinfo.cfm?id=0206282</ExternalLink>.</li>
+                            <li>"Superfund." Environmental Protection Agency. December 23, 2016. Accessed January 15, 2017. <ExternalLink url='https://www.epa.gov/superfund'>https://www.epa.gov/superfund</ExternalLink>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Speculative Design
+                        <ul>
+                            <li>Dunne, Anthony, and Fiona Raby. Speculative Everything: design, fiction, and social dreaming. Cambridge, MA: The MIT Press, 2013.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        )
     }
 };

@@ -51,7 +51,7 @@ export class Home extends React.Component {
 
                 <Isvg className='creek-bg' src='assets/CreekBackground.svg' />
                 <div className='home-content'>
-                    <Logo handleClick={this.hideHome} />
+                    <Logo />
                     <div className='home-left'>
                         <div className='left-content'>
                             <h2>

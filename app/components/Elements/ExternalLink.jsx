@@ -16,7 +16,7 @@ class ExternalLink extends React.Component {
         const { url, style, cls } = this.props;
         return (
             <a style={style}
-                className={cls}
+                className={cls || 'external-link'}
                 onClick={this.handleClick}>
                 {this.props.children}
             </a>

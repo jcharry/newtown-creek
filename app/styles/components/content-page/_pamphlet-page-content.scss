@@ -29,5 +29,26 @@
     @include large {
         width: 40%;
     }
+
+    .bibliography {
+        margin: 0;
+        margin-bottom: 12rem;
+        list-style: none;
+        width: 100%;
+        padding: 0;
+
+        >li {
+            // padding: 1rem;
+            padding: 1rem 0;
+            a {
+                color: $link-color;
+                word-wrap: break-word;
+            }
+
+            ul li {
+                padding: 0.3rem;
+            }
+        }
+    }
 }
 
