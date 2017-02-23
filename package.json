@@ -13,7 +13,8 @@
     "dev": "NODE_ENV=development webpack-dev-server",
     "start": "node server.js",
     "prod": "NODE_ENV=production webpack && node server.js",
-    "doc": "./node_modules/.bin/jsdoc -c ./jsdoc.conf.json -r"
+    "doc": "./node_modules/.bin/jsdoc -c ./jsdoc.conf.json -r",
+    "deploy": "NODE_ENV=production webpack && git push heroku master"
   },
   "author": "",
   "license": "ISC",
