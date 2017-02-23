@@ -69,8 +69,9 @@
             // height: 100%;
             min-width: 400px;
             flex: 1;
-            overflow-y: auto;
-            overflow-x: hidden;
+            // overflow-y: auto;
+            // overflow-x: hidden;
+            overflow: hidden;
             /*flex-basis: 40%*/
         }
         @include large {

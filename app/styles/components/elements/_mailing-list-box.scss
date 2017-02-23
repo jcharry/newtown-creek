@@ -6,16 +6,16 @@
     padding-left: 5vw;
     
     h3 {
-        font-size: 1rem;
+        font-size: 0.8rem;
         color: white;
         padding-right: 0.5rem;
     }
 
     .input {
         height: 40px;
-        border: 3px solid white;
+        border: 2px solid white;
         color: white;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         display:flex;
 
         input {
@@ -27,7 +27,7 @@
             border: none;
             background-color: $orange;
             color: white;
-            font-size: 1rem;
+            font-size: 0.8rem;
         }
 
         button {
@@ -37,7 +37,7 @@
             background-color: white;
             color: $blue;
             border: none;
-            font-size: 1rem;
+            font-size: 0.8rem;
             color: $orange;
         }
     }
@@ -46,21 +46,26 @@
         flex-direction: column;
 
         h3 {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
         }
         input {
             font-size: 0.5rem;
         }
         button {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
         }
     }
     @include medium {
-        flex-direction: row;
+        // flex-direction: row;
         h3 {
             margin-right: 20px;
         }
     }
+
+    @media (max-width: 520px) {
+        flex-direction: column;
+    }
+
     @include large {
         flex-direction: row;
         h3 {

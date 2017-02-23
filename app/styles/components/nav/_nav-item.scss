@@ -12,7 +12,8 @@
     }
 
     &.blur {
-        filter: blur(2px);
+        opacity: 0.5;
+        // filter: blur(2px);
     }
 
     .nav-item-number {

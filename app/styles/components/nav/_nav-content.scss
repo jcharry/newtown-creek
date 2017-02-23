@@ -1,11 +1,16 @@
 .nav-content {
     margin: 1.5rem;
+    overflow-y: auto;
+    margin-bottom: 8rem;
 
     // Direct child
     >p {
         font-size: 0.8rem;
         line-height: 1.4rem;
     }
+    // a:last-child {
+    //     margin-bottom: 12rem;
+    // }
 
     ul {
         list-style: none;
