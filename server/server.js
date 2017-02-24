@@ -17,8 +17,8 @@ process.env.PWD = process.cwd();
 
 let MONGO_DB_URI = '';
 // In production, use environment var to store mlab uri
-if (process.env.PROD_MONGODB) {
-    MONGO_DB_URI = process.env.PROD_MONGODB;
+if (process.env.MONGO_DB_URI) {
+    MONGO_DB_URI = process.env.MONGO_DB_URI;
 } else {
     // Locally store creds for development
     let creds  = require('../creds/creds.json');  // eslint-disable-line
