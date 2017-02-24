@@ -145,7 +145,7 @@ module.exports = {
         ]
     },
     plugins: configurePlugins(),
-    devServer: process.env.NODE_ENV === 'production' ? null : {
+    devServer: process.env.NODE_ENV === 'production' ? {} : {
         hot: true,
         // enable HMR on the server
 
