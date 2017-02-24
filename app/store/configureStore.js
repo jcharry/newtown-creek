@@ -2,7 +2,7 @@
 import * as redux from 'redux';
 import thunk from 'redux-thunk';
 
-import { landingPageReducer, loadingReducer, navReducer, pageInfoReducer, popupReducer } from 'app/reducers/reducers';
+import {landingPageReducer, loadingReducer, navReducer, pageInfoReducer, popupReducer, signedupReducer} from 'app/reducers/reducers';
 
 const configure = (initialState = {}) => {
     const reducer = redux.combineReducers({
@@ -10,12 +10,13 @@ const configure = (initialState = {}) => {
         nav: navReducer,
         isHomeVisible: landingPageReducer,
         pageInfo: pageInfoReducer,
-        popup: popupReducer
+        popup: popupReducer,
+        signedup: signedupReducer
     });
 
     const store = redux.createStore(reducer, initialState, redux.compose(
         redux.applyMiddleware(thunk),
-        window.devToolsExtension ? window.devToolsExtension() : (f) => { return f; }
+        window.devToolsExtension ? window.devToolsExtension() : f => f
     ));
 
     return store;

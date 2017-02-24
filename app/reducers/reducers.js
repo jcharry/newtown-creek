@@ -69,3 +69,12 @@ export const popupReducer = (state = false, action) => {
             return state;
     }
 };
+
+export const signedupReducer = (state = false, action) => {
+    switch (action.type) {
+        case 'SET_SIGNUP_STATE':
+            return action.signedup;
+        default:
+            return state;
+    }
+};

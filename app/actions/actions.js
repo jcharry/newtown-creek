@@ -1,64 +1,66 @@
-export const startLoading = () => {
-    return {
-        type: 'START_LOADING'
-    };
-};
+import axios from 'axios';
 
-export const stopLoading = () => {
-    return {
-        type: 'STOP_LOADING'
-    };
-};
+export const startLoading = () => ({
+    type: 'START_LOADING'
+});
 
-export const setHoverItem = (id) => {
-    return {
-        type: 'SET_HOVER_ITEM',
-        id
-    };
-};
+export const stopLoading = () => ({
+    type: 'STOP_LOADING'
+});
 
-export const clearHoverItem = () => {
-    return {
-        type: 'CLEAR_HOVER_ITEM'
-    };
-};
+export const setHoverItem = id => ({
+    type: 'SET_HOVER_ITEM',
+    id
+});
 
-export const setNavLocation = (loc) => {
-    return {
-        type: 'SET_NAV_LOCATION',
-        loc
-    };
-};
+export const clearHoverItem = () => ({
+    type: 'CLEAR_HOVER_ITEM'
+});
 
-export const hideHome = () => {
-    return {
-        type: 'HIDE_HOME'
-    };
-};
+export const setNavLocation = loc => ({
+    type: 'SET_NAV_LOCATION',
+    loc
+});
 
-export const showHome = () => {
-    return {
-        type: 'SHOW_HOME'
-    };
-};
+export const hideHome = () => ({
+    type: 'HIDE_HOME'
+});
 
-export const showNav = () => {
-    return {
-        type: 'SHOW_NAV'
+export const showHome = () => ({
+    type: 'SHOW_HOME'
+});
+
+export const showNav = () => ({
+    type: 'SHOW_NAV'
+});
+
+export const hideNav = () => ({
+    type: 'HIDE_NAV'
+});
+
+export const showDownloadPopup = () => ({
+    type: 'SHOW_DOWNLOAD_POPUP'
+});
+
+export const hideDownloadPopup = () => ({
+    type: 'HIDE_DOWNLOAD_POPUP'
+});
+
+export const signUp = email =>
+    (dispatch, getState) => {
+        axios.post('/api/signup', { email })
+            .then(res => {
+                if (res.status === 200) {
+                    dispatch(setSignupState(true));
+                }
+            })
+            .catch(err => {
+                console.log(err);
+                console.log(typeof err);
+            });
     };
-};
-export const hideNav = () => {
-    return {
-        type: 'HIDE_NAV'
-    };
-};
-export const showDownloadPopup = () => {
-    return {
-        type: 'SHOW_DOWNLOAD_POPUP'
-    };
-};
-export const hideDownloadPopup = () => {
-    return {
-        type: 'HIDE_DOWNLOAD_POPUP'
-    };
-};
+
+const setSignupState = signedup => ({
+    type: 'SET_SIGNUP_STATE',
+    signedup
+});

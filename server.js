@@ -1,6 +1,10 @@
-var express = require('express');
-var app = express();
-var path = require('path');
+const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser');
+
+const app = express();
+
+const jsonParser = bodyParser.json();
 
 // Heroku passes a port # as an environment var
 const PORT = process.env.PORT || 8080;
@@ -12,10 +16,31 @@ process.env.PWD = process.cwd();
 app.use(express.static('dist'));
 //app.use(express.static(process.env.PWD + '/static'));
 
-app.get('*', function (request, response){
-  response.sendFile(path.resolve(process.env.PWD, 'dist', 'index.html'));
+// app.use(function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     console.log('middleware fired');
+//     next();
+// });
+
+app.get('*', (request, response) => {
+    response.sendFile(path.resolve(process.env.PWD, 'dist', 'index.html'));
 });
 
-app.listen(PORT, function() {
-    console.log('listening on port ' + PORT);
+function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;    //eslint-disable-line
+    return re.test(email);
+}
+
+app.post('/api/signup', jsonParser, (req, res) => {
+    const email = req.body.email;
+    if (validateEmail(email)) {
+        res.status(200).send('success');
+    } else {
+        res.status(500).send('something went wrong');
+    }
+});
+
+app.listen(PORT, () => {
+    console.log(`listening on port ${PORT}`);
 });

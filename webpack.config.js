@@ -154,8 +154,14 @@ module.exports = {
 
         publicPath: '/',
         // match the output `publicPath`
-        historyApiFallback: true
+        historyApiFallback: true,
         // handle routes gracefully
+
+        // Proxy server
+        proxy: [{
+            path: '/api/*',
+            target: 'http://localhost:3000'
+        }]
     }
     // devServer: process.env.NODE_ENV === 'production' ? null : {
     //     contentBase: './dist',
