@@ -12,33 +12,47 @@
     }
 
     .input {
-        height: 40px;
-        border: 2px solid white;
         color: white;
         font-size: 0.7rem;
         display:flex;
+        flex-direction: column;
 
-        input {
-            margin: 0;
-            padding: 0 1rem;
-            flex: 3 1 70%;
-            height: 100%;
-            line-height: 100%;
-            border: none;
-            background-color: $orange;
-            color: white;
-            font-size: 0.8rem;
+
+        .input-content {
+            display: flex;
+            height: 40px;
+            border: 2px solid white;
+            input {
+                margin: 0;
+                padding: 0 1rem;
+                flex: 3 1 70%;
+                height: 100%;
+                line-height: 100%;
+                border: none;
+                background-color: $orange;
+                color: white;
+                font-size: 0.8rem;
+            }
+
+            button {
+                height: 100%;
+                flex: 1 1 30%;
+                width: 100px;
+                background-color: white;
+                color: $blue;
+                border: none;
+                font-size: 0.8rem;
+                color: $orange;
+            }
         }
 
-        button {
-            height: 100%;
-            flex: 1 1 30%;
-            width: 100px;
-            background-color: white;
-            color: $blue;
-            border: none;
-            font-size: 0.8rem;
-            color: $orange;
+        .input-error {
+            margin: 0;
+            padding: 0.1rem;
+            width: 100%;
+            // background-color: red;
+            color: #d2d2d2;
+
         }
     }
 

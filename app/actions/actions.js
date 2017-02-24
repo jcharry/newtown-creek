@@ -46,8 +46,13 @@ export const hideDownloadPopup = () => ({
     type: 'HIDE_DOWNLOAD_POPUP'
 });
 
+const setSignupState = signedup => ({
+    type: 'SET_SIGNUP_STATE',
+    signedup
+});
+
 export const signUp = email =>
-    (dispatch, getState) => {
+    dispatch => {
         axios.post('/api/signup', { email })
             .then(res => {
                 if (res.status === 200) {
@@ -60,7 +65,3 @@ export const signUp = email =>
             });
     };
 
-const setSignupState = signedup => ({
-    type: 'SET_SIGNUP_STATE',
-    signedup
-});

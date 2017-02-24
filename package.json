@@ -11,7 +11,7 @@
     "test": "NODE_ENV=test karma start",
     "build": "NODE_ENV=production webpack",
     "dev": "NODE_ENV=development webpack-dev-server",
-    "start": "node server.js",
+    "start": "node ./server/server.js",
     "prod": "NODE_ENV=production webpack && node server.js",
     "doc": "./node_modules/.bin/jsdoc -c ./jsdoc.conf.json -r",
     "deploy": "NODE_ENV=production webpack && git push heroku master"
@@ -69,6 +69,7 @@
     "express": "4.14.1",
     "history": "^4.3.0",
     "jquery": "3.1.1",
+    "mongoose": "^4.8.4",
     "react": "^15.3.2",
     "react-addons-css-transition-group": "^15.3.2",
     "react-dom": "15.4.2",

@@ -1,3 +1,4 @@
+/* global alert */
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from 'app/actions/actions';
@@ -7,8 +8,9 @@ class MailingListBox extends React.Component {
         super(props);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.validateEmail = this.validateEmail.bind(this);
 
-        this.emailRe= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; //eslint-disable-line
+        // this.emailRe= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; //eslint-disable-line
 
         this.state = {
             email: '',
@@ -16,9 +18,15 @@ class MailingListBox extends React.Component {
         };
     }
 
+    validateEmail(email) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;    //eslint-disable-line
+        return re.test(email);
+    }
+
     handleInputChange(e) {
         this.setState({
-            email: e.target.value
+            email: e.target.value,
+            valid: this.validateEmail(e.target.value)
         });
     }
 
@@ -26,17 +34,30 @@ class MailingListBox extends React.Component {
         e.preventDefault();
         const { dispatch } = this.props;
 
-        dispatch(actions.signUp(this.state.email));
-        // if (this.emailRe.test(this.state.email)) {
-        //     // Ajax action
-        //     dispatch(actions.signUp(this.state.email));
-        // } else {
-        //     alert('Please enter a valid email address');
-        // }
+        if (this.validateEmail(this.state.email)) {
+            // Ajax action
+            dispatch(actions.signUp(this.state.email));
+        } else {
+            // alert('Please enter a valid email address');
+        }
     }
 
     render() {
         const { signedup } = this.props;
+
+        const renderError = () => {
+            if (this.state.email === '') {
+                return null;
+            }
+
+            if (!this.state.valid) {
+                return (
+                    <p className='input-error'>Please enter a correct email address</p>
+                );
+            }
+
+            return null;
+        }
 
         const renderContent = () => {
             if (!signedup) {
@@ -44,27 +65,31 @@ class MailingListBox extends React.Component {
                     <div className='mailing-list-box'>
                         <h3>JOIN OUR MAILING LIST</h3>
                         <div className='input'>
-                            <input type='text' onChange={this.handleInputChange} value={this.state.email} placeholder='EMAIL ADDRESS' />
-                            <button type='submit' onClick={this.handleSubmit}>JOIN</button>
+                            <div className='input-content'>
+                                <input type='text' onChange={this.handleInputChange} value={this.state.email} placeholder='EMAIL ADDRESS' />
+                                <button type='submit' onClick={this.handleSubmit}>JOIN</button>
+                            </div>
+                            {renderError()}
                         </div>
                     </div>
-                )
-            } else {
-                return (
-                    <div className='mailing-list-box'>
-                        <h3>Thanks for signing up!</h3>
-                    </div>
-
-                )
+                );
             }
-        }
+
+            return (
+                <div className='mailing-list-box'>
+                    <h3>Thanks for signing up!</h3>
+                </div>
+
+            );
+        };
 
         return renderContent();
     }
 }
 
 MailingListBox.propTypes = {
-    dispatch: React.PropTypes.func.isRequired
+    dispatch: React.PropTypes.func.isRequired,
+    signedup: React.PropTypes.bool.isRequired
 };
 
 export default connect(state => ({
