@@ -8,8 +8,6 @@ const app = express();
 
 const jsonParser = bodyParser.json();
 
-console.log('tesitng something with git');
-
 // Heroku passes a port # as an environment var
 const PORT = process.env.PORT || 8080;
 // Heroku doesn't like __dirname, so we set the current
