@@ -71,7 +71,7 @@ class InteractiveMap extends React.Component {
             <div className='map-container'>
                 <p className='map-instructions'>This map reveals, in detail, the human and nonhuman entities that share Whale Creek.  Roll over the numbers to learn about killifish, black mayonnaise, and more.</p>
                 <ReactSVG
-                    path='assets/map-final.svg'
+                    path='assets/map-final-large-icons.svg'
                     callback={this.svgLoaded}
                     className='interactive-map-svg'
                 />

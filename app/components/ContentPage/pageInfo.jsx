@@ -1,5 +1,5 @@
 import React from 'react'; // eslint-disable-line
-import OilBargeSvg from 'app/components/OilBargeSvg';
+// import OilBargeSvg from 'app/components/OilBargeSvg';
 // import Isvg from 'react-inlinesvg';
 import ReactSVG from 'react-svg';
 import InteractiveMap from 'app/components/Elements/InteractiveMap';
@@ -114,7 +114,7 @@ export default {
                 <p className='heavy'><strong>This set of materials offers a theoretical and factual background for A Field Guide to the Dark Ecologies of Newtown Creek.  They are presented here for your further learning.</strong></p>
                 <ul className='bibliography'>
                     <li>
-                        Newtown Creek Ecology
+                        <h3>Newton Creek Ecology</h3>
                         <ul>
                             <li>McLaughlin, John. "Newtown Creek : Restoration Ecology." Lecture, Newtown Creek CAG Meeting, New York, NY, February 6, 2014. Accessed January 15, 2017. <ExternalLink url='https://newtowncreekcag.files.wordpress.com/2014/02/oes-netown-cag-presentation.pdf'>https://newtowncreekcag.files.wordpress.com/2014/02/oes-netown-cag-presentation.pdf</ExternalLink>.</li>
                             <li>"Newtown Creek Map." Map. Newtown Creek Alliance. 2016. Accessed January 15, 2017. <ExternalLink url='http://www.newtowncreekalliance.org/newtown-creek-map/'>http://www.newtowncreekalliance.org/newtown-creek-map/</ExternalLink>.</li>
@@ -123,21 +123,21 @@ export default {
                         </ul>
                     </li>
                     <li>
-                        Newtown Creek History
+                        <h3>Newtown Creek History</h3>
                         <ul>
                             <li>Waxman, Mitch. Newtown Creek for the vulgarly curious. Brooklyn, NY: Newtownpentacle.com, 2010.</li>
                             <li>"What Stenches Abound." The New York Times, March 27, 1881. Accessed January 15, 2017. <ExternalLink url='https://timesmachine.nytimes.com/timesmachine/1881/03/27/issue.html'>https://timesmachine.nytimes.com/timesmachine/1881/03/27/issue.html</ExternalLink>.</li>
                         </ul>
                     </li>
                     <li>
-                        The Post-natural
+                        <h3>The Post-natural</h3>
                         <ul>
                             <li>Marris, Emma. Rambunctious Garden: Saving Nature in a Post-wild World. New York: Bloomsbury, 2011.</li>
                             <li>Morton, Timothy. The Ecological Thought. Cambridge, MA: Harvard University Press, 2010.</li>
                         </ul>
                     </li>
                     <li>
-                        Deep Time
+                        <h3>Deep Time</h3>
                         <ul>
                             <li>Ellsworth, Elizabeth Ann, and Jamie Kruse. Making the Geologic Now: Responses to Material Conditions of Contemporary Life. Brooklyn, NY: Punctum Books, 2013.</li>
                             <li>Howe, Cymene and Pandian, Anand. "Lexicon for an Anthropocene Yet Unseen." Theorizing the Contemporary, Cultural Anthropology website, January 22, 2016. <ExternalLink url='https://culanth.org/fieldsights/803-lexicon-for-an-anthropocene-yet-unseen'>https://culanth.org/fieldsights/803-lexicon-for-an-anthropocene-yet-unseen</ExternalLink></li>
@@ -145,7 +145,7 @@ export default {
                         </ul>
                     </li>
                     <li>
-                        Superfunds & Brownfields
+                        <h3>Superfunds & Brownfields</h3>
                         <ul>
                             <li>"Meeting Notes & Presentations." Newtown Creek Community Advisory Group. April 24, 2016. Accessed January 15, 2017. <ExternalLink url='https://newtowncreekcag.wordpress.com/cag-notes/'>https://newtowncreekcag.wordpress.com/cag-notes/</ExternalLink>.</li>
                             <li>"Newtown Creek Brownfield Opportunity Area (BOA)." Newtown Creek Alliance. Accessed January 15, 2017. <ExternalLink url='http://www.newtowncreekalliance.org/boa/'>http://www.newtowncreekalliance.org/boa/</ExternalLink>.</li>
@@ -154,7 +154,7 @@ export default {
                         </ul>
                     </li>
                     <li>
-                        Speculative Design
+                        <h3>Speculative Design</h3>
                         <ul>
                             <li>Dunne, Anthony, and Fiona Raby. Speculative Everything: design, fiction, and social dreaming. Cambridge, MA: The MIT Press, 2013.</li>
                         </ul>

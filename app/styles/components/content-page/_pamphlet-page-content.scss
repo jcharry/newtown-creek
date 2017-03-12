@@ -42,6 +42,10 @@
         padding: 0;
 
         >li {
+            ul {
+                list-style: none;
+                padding: 0;
+            }
             // padding: 1rem;
             padding: 1rem 0;
             a {
@@ -50,7 +54,19 @@
             }
 
             ul li {
-                padding: 0.3rem;
+                padding: 0.3rem 0;
+            }
+        }
+
+        h3 {
+            margin: 0;
+            &:after {
+                content: '';
+                display: block;
+                height: 2px;
+                background-color: $dark-text-color;
+                width: 51px;
+                margin: 0.6rem 0;
             }
         }
     }
