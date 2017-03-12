@@ -8,8 +8,8 @@
     padding-right: 17px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     transition: opacity 1s, filter 1s;
+    overflow-y: auto;
 
     background-color: $blue;
     h1 {

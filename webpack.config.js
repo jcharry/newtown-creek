@@ -36,11 +36,11 @@ const configurePlugins = () => {
                 NODE_ENV: JSON.stringify(process.env.NODE_ENV)
             }
         }),
-        new webpack.LoaderOptionsPlugin({
-            options: {
-                postcss: [autoprefixer]
-            }
-        })
+        // new webpack.LoaderOptionsPlugin({
+        //     options: {
+        //         postcss: [autoprefixer]
+        //     }
+        // })
         // new webpack.ProvidePlugin({
         //     $: 'jquery',
         //     jQuery: 'jquery'
