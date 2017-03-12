@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="178px" height="178px" viewBox="0 0 178 178" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Coming soon badge</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-614.000000, -211.000000)">
+            <g id="Coming-soon-badge" transform="translate(614.000000, 211.000000)">
+                <circle id="Oval" fill="#3366B3" cx="89" cy="89" r="89"></circle>
+                <text id="COMING-SOON" font-family='NeuzeitSLTStd-BookHeavy, sans-serif' font-size="14" font-weight="600" line-spacing="16" letter-spacing="0.466666758" fill="#FEFFF0">
+                    <tspan x="56.1209997" y="134">COMING </tspan>
+                    <tspan x="66.3036665" y="150">SOON</tspan>
+                </text>
+                <g id="Page-1" transform="translate(76.000000, 22.000000)" fill="#FFFFFF">
+                    <path d="M21,0 L4.4,0 C2,0 0,2 0,4.4 L0,31.4 C0,33.3 0.8,35.2 2.2,36.6 L5,39.4 C7,41.4 7,44.8 5,46.8 L2.2,49.6 C0.8,51 0,52.8 0,54.8 L0,84.5 C0,86.9 2,88.9 4.4,88.9 L21,88.9 C23.4,88.9 25.4,86.9 25.4,84.5 L25.4,54.7 C25.4,52.8 24.6,50.9 23.2,49.5 L20.5,46.8 C18.5,44.8 18.5,41.4 20.5,39.4 L23.2,36.7 C24.6,35.3 25.4,33.5 25.4,31.5 L25.4,4.5 C25.4,2 23.4,0 21,0 M21,1.9 C22.4,1.9 23.6,3.1 23.6,4.5 L23.6,31.6 C23.6,33.1 23,34.5 22,35.5 L19.3,38.2 C18,39.5 17.2,41.3 17.2,43.2 C17.2,45.1 17.9,46.9 19.3,48.2 L22,50.9 C23,51.9 23.6,53.3 23.6,54.8 L23.6,84.6 C23.6,86 22.4,87.2 21,87.2 L4.4,87.2 C3,87.2 1.8,86 1.8,84.6 L1.8,54.9 C1.8,53.4 2.4,52 3.4,51 L6.2,48.2 C7.5,46.9 8.3,45.1 8.3,43.2 C8.3,41.3 7.6,39.5 6.2,38.2 L3.4,35.4 C2.4,34.4 1.8,33 1.8,31.5 L1.8,4.5 C1.8,3.1 3,1.9 4.4,1.9 L21,1.9" id="Fill-1"></path>
+                    <path d="M18.6,85.7 L6.8,85.7 C4.9,85.7 3.4,84.2 3.4,82.3 L3.4,80.7 L12.7,75.3 L22,80.7 L22,82.3 C22,84.2 20.5,85.7 18.6,85.7" id="Fill-3"></path>
+                    <path d="M19.5,36 C20.8,34.8 21.8,33.5 21.8,31.8 L21.8,10.9 L3.6,10.9 L3.6,31.7 C3.6,33.4 4.6,34.5 5.9,35.9 C5.9,35.9 8.429,38.525 9.1,39.8 C9.925,40.56 12.1,41.2 12.2,41.8 L13.1,41.8 C13.2,41.2 16.1,40.5 16.3,39.6 C16.6,38.3 19.5,36 19.5,36" id="Fill-5"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -6,28 +6,19 @@
     // height: 40px;
     cursor: pointer;
     outline: none;
-    transition: all 0.5s;
-    font-size: 0.6rem;
+    // transition: all 0.5s;
+    font-size: 0.5rem;
     display:flex;
     flex-direction: column;
+    font-family: $font-heavy;
+    padding-bottom: 15px;
 
     &.active {
         opacity: 1;
+        border-bottom: 1px solid white;
     }
-
-    &:after {
-        content: '';
-        height: 2px;
-        width: 0px;
-        background: white;
-        transition: all 0.5s ease-in-out;
-    }
-
     &:hover {
         opacity: 1;
-
-        &:after {
-            width: 100%;
-        }
+        border-bottom: 1px solid white;
     }
 }

@@ -8,8 +8,13 @@ export class PamphletContainer extends React.Component {
     render() {
         const pageData = this.props.pageInfo[this.props.params.page];
         const { popup, nav } = this.props;
+        // get page size
+        let clsName = 'pamphlet-container';
+        if (window.innerWidth < 980 && nav.visible) {
+            clsName += ' pamphlet-container-fixed';
+        }
         return (
-            <div className={nav.visible ? 'pamphlet-container pamphlet-container-fixed' : 'pamphlet-container'}>
+            <div className={clsName}>
                 <PamphletPage nav={nav} blurred={popup} pageData={pageData} allPages={this.props.pageInfo} />
                 <DownloadPopup pageData={pageData} visible={popup} />
             </div>

@@ -5,12 +5,22 @@
  * Distributed under terms of the MIT license.
  */
 import React from 'react';
-import logo from 'assets/logo.png';
+import ReactSVG from 'react-svg';
+// import logo from 'assets/logo.svg';
 
 class Logo extends React.Component {
+    constructor(props) {
+        super(props);
+        this.svgLoaded = this.svgLoaded.bind(this);
+    }
+    svgLoaded(svg) {
+        svg.onclick = this.props.handleClick;
+    }
     render() {
         return (
-            <img className='fsde-logo' src={logo} onClick={this.props.handleClick} alt='fsde logo' />
+            <ReactSVG path='assets/fsdelogo.svg'
+                callback={this.svgLoaded}
+                className='fsde-logo' />
         );
     }
 }

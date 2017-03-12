@@ -41,14 +41,31 @@ export class Nav extends React.Component {
     render() {
         const { nav, pageInfo, dispatch } = this.props;
 
-        const buttons = ['The Field Guide', 'Who We Are', 'Mission', 'Get Involved'];
+        const buttons = [
+            {
+                title: 'THE FIELD GUIDE',
+                id: 'fieldguide'
+            },
+            {
+                title: 'WHO WE ARE',
+                id: 'whoweare'
+            },
+            {
+                title: 'MISSION',
+                id: 'mission'
+            },
+            {
+                title: 'GET INVOLVED',
+                id: 'getinvolved'
+            }
+        ];
         const renderNavButtons = () =>
-            buttons.map(text =>
+            buttons.map(button =>
                 <p
-                    key={text}
-                    className={nav.navLocation === text ? 'nav-item-top active' : 'nav-item-top'}
-                    onClick={() => { dispatch(actions.setNavLocation(text)); }}
-                >{text}</p>
+                    key={button.title}
+                    className={nav.navLocation === button.id ? 'nav-item-top active' : 'nav-item-top'}
+                    onClick={() => { dispatch(actions.setNavLocation(button.id)); }}
+                >{button.title}</p>
             );
 
         const constructNavItems = () =>
@@ -69,13 +86,13 @@ export class Nav extends React.Component {
 
         const renderNavContent = () => {
             switch (nav.navLocation) {
-                case 'The Field Guide':
+                case 'fieldguide':
                     return constructNavItems();
-                case 'Who We Are':
+                case 'whoweare':
                     return <WhoWeAre />;
-                case 'Mission':
+                case 'mission':
                     return <Mission />;
-                case 'Get Involved':
+                case 'getinvolved':
                     return <GetInvolved />;
                 default:
                     return constructNavItems();
@@ -83,7 +100,7 @@ export class Nav extends React.Component {
         };
 
         return (
-            <div className='nav' ref={(c) => { this.elt = c; }}>
+            <div className='nav' ref={c => { this.elt = c; }}>
                 <div className='nav-top'>
                     {renderNavButtons()}
                 </div>

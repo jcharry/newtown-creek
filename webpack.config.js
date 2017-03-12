@@ -130,6 +130,10 @@ module.exports = {
             //     loader: 'eslint-loader'
             // },
             {
+                test: /\.(otf|eot|ttf|woff|woff2)$/,
+                loader: 'file-loader?name=assets/fonts/[name].[ext]'
+            },
+            {
                 test: /\.scss/,
                 loader: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
             },

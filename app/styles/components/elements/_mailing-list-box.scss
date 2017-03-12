@@ -32,6 +32,11 @@
                 background-color: $orange;
                 color: white;
                 font-size: 0.8rem;
+
+                &::placeholder {
+                    color: white;
+                    opacity: 0.35;
+                }
             }
 
             button {

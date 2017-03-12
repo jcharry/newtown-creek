@@ -1,13 +1,8 @@
 @import 'components/content-page/pamphlet-page-content';
-.pamphlet-container-fixed {
-    /*width: 100vw;*/
-    /*position: fixed;*/
-}
 
-/*.pamphlet-page-fixed {*/
-    /*overflow-x: hidden;*/
-    /*position: fixed;*/
-/*}*/
+.pamphlet-container-fixed {
+    position: fixed;
+}
 .pamphlet-page {
     opacity: 0;
     transition: filter 0.5s, opacity 1s;
@@ -33,6 +28,7 @@
             justify-content: center;
             width: 100px;
             cursor: pointer;
+            z-index: 5;
         }
         .arrow-img img {
             max-width: 25px;
@@ -60,21 +56,36 @@
         cursor: pointer;
         position: absolute;
         top: 2rem;
-        right: 5vw;
+        right: 2rem;
+        // right: 5vw;
         padding: 0;
         // margin: 3rem 2rem 0 0;
         width: 50px;
         height: 50px;
-        z-index: 10;
-        transition: right 0.5s ease-in-out;
+        z-index: 30;
+        // transition: right 0.5s ease-in-out;
         outline: none;
+
+        .hamburger-inner {
+            background-color: $blue;
+            &:before, &:after {
+                background-color: $blue;
+            }
+        }
     }
 
     .menu-open {
         position: fixed;
         right: 400px;
-        top: 0px;
-        background-color: $blue;
+        top: 5px;
+        background-color: $deep-blue;
+
+        .hamburger-inner {
+            background-color: transparent;
+        }
+        .menu-active::before, .menu-active::after {
+            background-color: white;
+        }
     }
 
     .menu-active::before, .menu-active::after {
@@ -91,6 +102,7 @@
         overflow-y: scroll;
         overflow-x: hidden;
         min-height:100vh;
+        z-index: 10;
         /*overflow-y: scroll;*/
     }
     /*.show-intro {*/
