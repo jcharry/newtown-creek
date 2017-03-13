@@ -42,10 +42,10 @@ export default {
             <div className='popup-content'>
                 <ol>
                     <li>Download the pamphlet and go identify things at the Newtown Creek Nature Walk.
-                        <a href='/assets/test-pamphlet.pdf' download='test-pamphlet.pdf'>Download</a>
+                        <a href='/assets/031217_FieldGuide_Final_v10-web.pdf' download='test-pamphlet.pdf'>Download</a>
                     </li>
                     <li>Download the audio experience for a guided walking tour of the site.
-                        <a href='/assets/test-pamphlet.pdf' download='test-pamphlet.pdf'>Download</a>
+                        <a>Coming Soon</a>
                     </li>
                 </ol>
             </div>
