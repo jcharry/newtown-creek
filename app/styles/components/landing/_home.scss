@@ -23,7 +23,6 @@
                 padding: 0 2rem;
             }
             h2 {
-                font-size: 26px;
                 color: $header-color;
                 padding: 0 2rem;
             }
@@ -44,18 +43,18 @@
             }
 
             .left-content {
-                max-width: 600px;
+                max-width: 700px;
             }
         }
         .home-right {
-            min-width: 319px;
+            min-width: 400px;
             flex: 1;
             overflow: hidden;
         }
         @include large {
             .home-left {
                 h2 {
-                    font-size: 1.2rem;
+                    font-size: 1.6rem;
                 }
                 p {
                     font-size: 1rem;
@@ -65,10 +64,24 @@
         @include medium {
             .home-left {
                 h2 {
-                    font-size: 1rem;
+                    font-size: 1.4rem;
                 }
                 p {
                     font-size: 0.9rem;
+                }
+            }
+        }
+        @media (max-width: 786px) {
+            .home-left {
+                h2 {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        @media (max-width: 700px) {
+            .home-left {
+                h2 {
+                    font-size: 1.6rem;
                 }
             }
         }
@@ -80,6 +93,9 @@
                 p {
                     font-size: 0.8rem;
                 }
+            }
+            .home-right {
+                min-width: auto;
             }
         }
         @media (max-width: 700px) {
