@@ -53,9 +53,9 @@ export class Home extends React.Component {
                 <div className='home-content'>
                     <div className='home-left'>
                         <div className='left-content'>
-                            <h2>Field Guide to the Dark Ecologies of Newtown Creek connects you to the obscured, maligned, yet vital waterway that runs between Brooklyn and Queens in New York, NY. At stake along the Creek are the survival and thriving of multiple stakeholders, human and non-human.</h2>
-                            <p>A Field Guide is composed in four sections: each contains a self-guided pamphlet in conversation with a site-specific engagement, generated through community partnerships. You will find all the sections on this website, ready for download, along with resources to help you engage through further ways of knowing.</p>
-                            <p>A project of the Floating Studio for Dark Ecologies (FSDE).</p>
+                            <h2>A Field Guide to the Dark Ecologies of Newtown Creek connects you to the obscured, maligned, yet vital waterway that runs between Brooklyn and Queens in New York, NY. At stake along the Creek are the survival and thriving of multiple stakeholders, human and non-human.</h2>
+                            <p>A Field Guide to the Dark Ecologies of Newtown Creek is designed in four phases that we are developing over time. Each contains a self-guided pamphlet in conversation with a site-specific engagement, generated through community partnerships. You will find all the sections on this website, along with resources to help you engage through further ways of knowing.</p>
+                            <p>The first installment of A Field Guide is available! Access our self-guided audio tour playlist or download the pamphlet on the “Oil Twitchers & Barge Spotters” page.</p>
                         </div>
                     </div>
                     <div ref={(c) => { this.homeRight = c; }}className='home-right'>
@@ -77,4 +77,3 @@ Home.propTypes = {
 };
 
 export default connect()(Home);
-
