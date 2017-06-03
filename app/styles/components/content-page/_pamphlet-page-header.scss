@@ -1,4 +1,12 @@
 .pamphlet-page-header {
+    .pamphlet-page-header-title {
+        display: flex;
+        span {
+            font-family: $font-normal;
+            font-size: 1.8rem;
+            color: $deep-blue;
+        }
+    }
     margin-top: 100px;        
     h1 {
         color: $blue;

@@ -6,11 +6,12 @@ import InteractiveMap from 'app/components/Elements/InteractiveMap';
 import ExternalLink from 'app/components/Elements/ExternalLink';
 
 export default {
-    '01-introduction': {
+    'introduction': {
         header: 'Introduction',
         subHeader: '',
-        position: '01',
-        url: '01-introduction',
+        position: '00',
+        url: 'introduction',
+        shouldShowNumber: false,
         active: false,
         pageContent: (
             <div className='pamphlet-page-content'>
@@ -23,11 +24,12 @@ export default {
             </div>
         )
     },
-    '02-whale-creek': {
+    'whale-creek': {
         header: 'Oil Twitchers & Barge Spotters',
         subHeader: 'A FIELD GUIDE TO WHALE CREEK',
-        position: '02',
-        url: '02-whale-creek',
+        position: '01',
+        url: 'whale-creek',
+        shouldShowNumber: true,
         active: false,
         hasPopup: true,
         hasSvg: true,
@@ -38,10 +40,11 @@ export default {
                 <InteractiveMap />
             </div>
         ),
-        popupButtonText: 'Want To Participate?',
+        popupButtonText: 'Expedition Materials',
         popupContent: (
             <div className='popup-content'>
                 <ol>
+                    Use these materials to go out to the Newtown Creek Nature Walk and investigate
                     <li>Download the pamphlet and go identify things at the Newtown Creek Nature Walk.
                         <a href='/assets/031217_FieldGuide_Final_v10-web.pdf' download='031217_FieldGuide_Final_v10-web.pdf'>Download</a>
                     </li>
@@ -52,11 +55,12 @@ export default {
             </div>
         )
     },
-    '03-newtown-creek-2050': {
+    'newtown-creek-2050': {
         header: 'A Look at Newtown Creek 2050',
         subHeader: '',
-        position: '03',
-        url: '03-newtown-creek-2050',
+        position: '02',
+        shouldShowNumber: true,
+        url: 'newtown-creek-2050',
         active: false,
         hasPopup: false,
         popupButtonText: 'Coming Soon',
@@ -68,27 +72,29 @@ export default {
             </div>
         )
     },
-    '04-whats-in-it': {
+    'whats-in-it': {
         header: 'What\'s In It?',
         subHeader: '',
-        position: '04',
-        url: '04-whats-in-it',
+        position: '03',
+        shouldShowNumber: true,
+        url: 'whats-in-it',
         active: false,
         hasPopup: false,
         popupButtonText: 'Coming Soon',
         pageContent: (
             <div className='pamphlet-page-content'>
                 <ReactSVG className='page-badge' path='assets/coming-soon-badge.svg' alt='coming soon' />
-                <p className='heavy'><strong><em>What's in It?: Researching Newtown Creek's Wonders and Danger</em> will be a citizen science initiative developed in collaboration with middle school classrooms along Newtown Creek.</strong></p>
+                <p className='heavy'><strong><em>What's in It?: Researching Newtown Creek's Wonders and Dangers</em> will be a citizen science initiative developed in collaboration with middle school classrooms along Newtown Creek.</strong></p>
                 <p>You will explore youth-led research questions, apply hands-on methods for carrying out the inquiries, and contribute to the growing body of community-based information that is uncovered along the waterway.  <em>What's In It?</em> takes a procedural, systematic approach to gathering useful data about the current state of the Creek, while embodying inclusive definitions of research and science.</p>
             </div>
         )
     },
-    '05-phantom-smells': {
+    'phantom-smells': {
         header: 'The Order of the Phantom Smells',
         subHeader: '',
-        position: '05',
-        url: '05-phantom-smells',
+        position: '04',
+        shouldShowNumber: true,
+        url: 'phantom-smells',
         active: false,
         hasPopup: false,
         pageContent: (
@@ -101,11 +107,12 @@ export default {
             </div>
         )
     },
-    '06-bibliography': {
+    'bibliography': {
         header: 'Bibliography',
         subHeader: '',
-        position: '06',
-        url: '06-bibliography',
+        position: '05',
+        shouldShowNumber: false,
+        url: 'bibliography',
         active: false,
         hasPopup: false,
         pageContent: (

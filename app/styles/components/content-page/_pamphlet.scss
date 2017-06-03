@@ -11,6 +11,10 @@
     align-items: center;
     overflow-x: hidden;
 
+    .pamphlet-page-popup-button {
+        cursor: pointer;
+    }
+
     .arrows {
         div:last-child {
             margin-top: 10px;

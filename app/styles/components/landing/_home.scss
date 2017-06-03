@@ -12,6 +12,10 @@
         display: flex;
         position: relative;
         flex: 1 1 100%;
+        a {
+            color: $link-color;
+        }
+
         .home-left {
             flex: 2;
             height: auto;

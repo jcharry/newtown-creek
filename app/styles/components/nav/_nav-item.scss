@@ -18,6 +18,10 @@
 
     .nav-item-number {
         color: $deep-blue;
+
+        &.number-hidden {
+            visibility: hidden;
+        }
     }
     a:active {
         background-color:rgba(50, 50, 50, 0.5);

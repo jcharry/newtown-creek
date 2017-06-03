@@ -9,6 +9,7 @@ function NavItem(props) {
         subHeader,
         url,
         position,
+        shouldShowNumber,
         active,
         shouldBlur
     } = props;
@@ -31,7 +32,7 @@ function NavItem(props) {
         >
             <Link className='nav-link' to={`${url}`} >
                 <div className='nav-left'>
-                    <p className='nav-item-number'>{position} </p>
+                    <p className={shouldShowNumber === true ? 'nav-item-number' : 'nav-item-number number-hidden'}>{position} </p>
                 </div>
                 <div className='nav-right'>
                     <h2>{header}</h2>

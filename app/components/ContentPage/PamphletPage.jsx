@@ -105,9 +105,12 @@ export class PamphletPage extends React.Component {
                 <BlueBorder />
                 <Link to='/'><Logo /></Link>
                 <div className='pamphlet-page-header'>
-                    <h1>{pageData.header}</h1>
+                    <div className='pamphlet-page-header-title'>
+                        {pageData.shouldShowNumber && <span>{pageData.position}</span>}
+                        <h1>{pageData.header}</h1>
+                    </div>
                     {pageData.subHeader && <p className='pamphlet-page-subheader'>{pageData.subHeader}</p>}
-                    {pageData.hasPopup && <button className='' onClick={this.handleDownloadClick}>{pageData.popupButtonText.toUpperCase()}</button>}
+                    {pageData.hasPopup && <button className='pamphlet-page-popup-button' onClick={this.handleDownloadClick}>{pageData.popupButtonText.toUpperCase()}</button>}
                 </div>
                 {pageData.pageContent && pageData.pageContent}
                 <HamburgerButton handleClick={this.handleMenuClick} open={nav.visible}/>
