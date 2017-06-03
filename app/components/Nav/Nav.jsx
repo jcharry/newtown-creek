@@ -79,6 +79,7 @@ export class Nav extends React.Component {
                     url={pageInfo[key].url}
                     key={pageInfo[key].position}
                     shouldShowNumber={pageInfo[key].shouldShowNumber}
+                    icons={pageInfo[key].navIcons}
                     active={pageInfo[key].position === nav.hoverItem}
                     shouldBlur={nav.hoverItem !== ''}
                 />

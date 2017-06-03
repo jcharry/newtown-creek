@@ -12,7 +12,32 @@
     overflow-x: hidden;
 
     .pamphlet-page-popup-button {
+        box-sizing: border-box;
         cursor: pointer;
+        height: 60px;
+
+        display: flex;
+        background-color: $orange;
+        align-items: center;
+        padding: 1rem;
+        margin: 1rem;
+
+        img {
+            // width: 20px;
+            height: 15px;
+            margin: 0.3rem;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            border: none;
+            color: white;
+            font-family: $font-heavy;
+            line-height: 100%;
+        }
     }
 
     .arrows {

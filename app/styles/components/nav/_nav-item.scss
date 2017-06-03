@@ -38,5 +38,16 @@
     }
     .nav-right {
         max-width: 350px;
+        h2 {
+            margin-bottom: 5px;
+        }
+    }
+
+    .nav-item-icons {
+        margin-left: 20px;
+        img {
+            height: 15px;
+            margin: 0 5px 0 0;
+        }
     }
 }

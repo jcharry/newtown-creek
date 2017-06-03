@@ -110,7 +110,15 @@ export class PamphletPage extends React.Component {
                         <h1>{pageData.header}</h1>
                     </div>
                     {pageData.subHeader && <p className='pamphlet-page-subheader'>{pageData.subHeader}</p>}
-                    {pageData.hasPopup && <button className='pamphlet-page-popup-button' onClick={this.handleDownloadClick}>{pageData.popupButtonText.toUpperCase()}</button>}
+                    {pageData.hasPopup &&
+                        <div
+                            className='pamphlet-page-popup-button'
+                            onClick={this.handleDownloadClick}
+                        >
+                            <p>{pageData.popupButtonText}</p>
+                            {pageData.popupButtonIcons && pageData.popupButtonIcons.map(asset => <img src={asset}/>)}
+                        </div>
+                    }
                 </div>
                 {pageData.pageContent && pageData.pageContent}
                 <HamburgerButton handleClick={this.handleMenuClick} open={nav.visible}/>
@@ -119,7 +127,6 @@ export class PamphletPage extends React.Component {
                 <div className='footer fixed-bottom'>
                     <MailingListBox />
                 </div>
-
             </div>
         );
     }

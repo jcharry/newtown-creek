@@ -11,7 +11,8 @@ function NavItem(props) {
         position,
         shouldShowNumber,
         active,
-        shouldBlur
+        shouldBlur,
+        icons
     } = props;
 
     const constructClass = function() {
@@ -36,6 +37,7 @@ function NavItem(props) {
                 </div>
                 <div className='nav-right'>
                     <h2>{header}</h2>
+                    {icons && <div className='nav-item-icons'>{icons.map(icon => <img src={icon} />)}</div>}
                 </div>
             </Link>
         </div>

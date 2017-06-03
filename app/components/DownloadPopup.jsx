@@ -28,7 +28,7 @@ export class DownloadPopup extends React.Component {
         return (
             <div className='popup-container' style={style}>
                 <div className='popup'>
-                    <h2>Want to Participate? Here's how:</h2>
+                    <h2>{pageData.popupTitle}</h2>
                     {pageData.popupContent}
                     <button className='download-popup-close-btn is-active hamburger hamburger--spring' type='button' onClick={this.handleClick}>
                         <span className='hamburger-box'>

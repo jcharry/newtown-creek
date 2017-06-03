@@ -1,3 +1,6 @@
+/* eslint
+    "react/no-unescaped-entities": "off"
+*/
 import React from 'react'; // eslint-disable-line
 // import OilBargeSvg from 'app/components/OilBargeSvg';
 // import Isvg from 'react-inlinesvg';
@@ -6,7 +9,7 @@ import InteractiveMap from 'app/components/Elements/InteractiveMap';
 import ExternalLink from 'app/components/Elements/ExternalLink';
 
 export default {
-    'introduction': {
+    introduction: {
         header: 'Introduction',
         subHeader: '',
         position: '00',
@@ -30,6 +33,10 @@ export default {
         position: '01',
         url: 'whale-creek',
         shouldShowNumber: true,
+        navIcons: [
+            '/assets/Icon-Pamphlet.png',
+            '/assets/Icon-Audio.png'
+        ],
         active: false,
         hasPopup: true,
         hasSvg: true,
@@ -40,16 +47,20 @@ export default {
                 <InteractiveMap />
             </div>
         ),
-        popupButtonText: 'Expedition Materials',
+        popupButtonText: 'EXPEDITION MATERIALS',
+        popupButtonIcons: [
+            '/assets/Icon-Pamphlet.png',
+            '/assets/Icon-Audio.png'
+        ],
+        popupTitle: 'Use these materials to go out to the Newtown Creek Nature Walk and investigate',
         popupContent: (
             <div className='popup-content'>
                 <ol>
-                    Use these materials to go out to the Newtown Creek Nature Walk and investigate
                     <li>Download the pamphlet and go identify things at the Newtown Creek Nature Walk.
                         <a href='/assets/031217_FieldGuide_Final_v10-web.pdf' download='031217_FieldGuide_Final_v10-web.pdf'>Download</a>
                     </li>
                     <li>Download the audio experience for a guided walking tour of the site.
-                        <a>Coming Soon</a>
+                        <ExternalLink url='https://soundcloud.com/user-312883240/sets/whalecreekfieldguide'>Download</ExternalLink>
                     </li>
                 </ol>
             </div>
@@ -66,7 +77,7 @@ export default {
         popupButtonText: 'Coming Soon',
         pageContent: (
             <div className='pamphlet-page-content'>
-                <ReactSVG className='page-badge' path='assets/coming-soon-badge.svg' alt='coming soon' />
+                <img className='page-badge' src='/assets/in-development.png' />
                 <p className='heavy'><strong>Newtown Creek has a future.  The question is, who decides what it looks like?</strong></p>
                 <p><em>A Look at Newtown Creek 2050</em> will inspire Newtown Creek workers, residents, and business owners to add their vision for the waterway to the process already begun by urban planners, federal agencies, and real estate developers.  The same tools being used in that process -- GIS systems, 3D modelling engines, and speculative visualizations -- will animate the imaginings of these community stakeholders.   A Look at Newtown Creek 2050 will render current efforts and community visions with the same fidelity and potency achieved in brochures that advertise planned and for-sale developments.</p>
             </div>
@@ -83,9 +94,9 @@ export default {
         popupButtonText: 'Coming Soon',
         pageContent: (
             <div className='pamphlet-page-content'>
-                <ReactSVG className='page-badge' path='assets/coming-soon-badge.svg' alt='coming soon' />
+                <img className='page-badge' src='/assets/in-development.png' />
                 <p className='heavy'><strong><em>What's in It?: Researching Newtown Creek's Wonders and Dangers</em> will be a citizen science initiative developed in collaboration with middle school classrooms along Newtown Creek.</strong></p>
-                <p>You will explore youth-led research questions, apply hands-on methods for carrying out the inquiries, and contribute to the growing body of community-based information that is uncovered along the waterway.  <em>What's In It?</em> takes a procedural, systematic approach to gathering useful data about the current state of the Creek, while embodying inclusive definitions of research and science.</p>
+                <p>You will explore youth-led research questions, apply hands-on methods for carrying out the inquiries, and contribute to the growing body of community-based information that is uncovered along the waterway. <em>What's In It?</em> takes a procedural, systematic approach to gathering useful data about the current state of the Creek, while embodying inclusive definitions of research and science.</p>
             </div>
         )
     },
@@ -99,15 +110,15 @@ export default {
         hasPopup: false,
         pageContent: (
             <div className='pamphlet-page-content'>
-                <ReactSVG className='page-badge' path='assets/coming-soon-badge.svg' alt='coming soon' />
+                <img className='page-badge' src='/assets/in-development.png' />
                 <p className='heavy'><strong>Welcome to The Order of the Phantom Smells.</strong></p>
-                <p>Inspired by the work of an actual 1890 "smelling committee" organized for nefarious purposes in Greenpoint, Brooklyn, you are about to embark on a nighttime hunt for the olfactory ghosts that haunt the waters and shores of Newtown Creek.  <em>The Order of the Phantom Smells</em> will be created in collaboration with historian Mitch Waxman, and will provoke you to link invisible, odorous traces to the invisible processes and systems that have resulted in the wicked problems plaguing the waterway today.</p>
+                <p>Inspired by the work of an actual 1890 "smelling committee" organized for nefarious purposes in Greenpoint, Brooklyn, you are about to embark on a nighttime hunt for the olfactory ghosts that haunt the waters and shores of Newtown Creek. <em>The Order of the Phantom Smells</em> will be created in collaboration with historian Mitch Waxman, and will provoke you to link invisible, odorous traces to the invisible processes and systems that have resulted in the wicked problems plaguing the waterway today.</p>
                 <p>"The waters of Newtown Creek run through a region that gives out more disgusting smells per square inch than any other portion of the world can furnish in a square mile." - <em>New York Times</em>, March 27, 1881.
                 </p>
             </div>
         )
     },
-    'bibliography': {
+    bibliography: {
         header: 'Bibliography',
         subHeader: '',
         position: '05',
