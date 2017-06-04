@@ -18,9 +18,12 @@
 
         .home-left {
             flex: 2;
-            height: auto;
+            height: 100vh;
+            box-sizing: border-box;
+            padding-top: 130px;
+            padding-bottom: 100px;
             display: flex;
-            justify-content: center;
+            // justify-content: center;
             flex-direction: column;
 
             h2, p {
@@ -48,6 +51,7 @@
 
             .left-content {
                 max-width: 700px;
+                overflow-y: auto;
             }
         }
         .home-right {
@@ -82,13 +86,6 @@
                 }
             }
         }
-        @media (max-width: 700px) {
-            .home-left {
-                h2 {
-                    font-size: 1.6rem;
-                }
-            }
-        }
         @include small {
             .home-left {
                 h2 {
@@ -108,6 +105,12 @@
                 width: 100vw;
             }
 
+            .home-left {
+                h2 {
+                    font-size: 1.6rem;
+                }
+            }
+
             flex-direction: column;
 
 
@@ -116,7 +119,7 @@
                 margin-bottom: 10px;
                 height: auto;
                 padding-bottom: 10px;
-
+                padding-top: 0px;
             }
             .home-right {
                 .nav {
