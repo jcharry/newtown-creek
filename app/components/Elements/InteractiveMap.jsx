@@ -66,7 +66,6 @@ class InteractiveMap extends React.Component {
     }
 
     render() {
-        console.log('rendering map');
         return (
             <div className='map-container'>
                 <p className='map-instructions'>This map reveals, in detail, the human and non-human entities that share Whale Creek.  Roll over the letters to learn about killifish, black mayonnaise, and more.</p>
