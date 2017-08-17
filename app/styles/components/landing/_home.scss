@@ -23,7 +23,7 @@
             padding-top: 130px;
             padding-bottom: 100px;
             display: flex;
-            // justify-content: center;
+            justify-content: center;
             flex-direction: column;
 
             h2, p {
@@ -62,7 +62,7 @@
         @include large {
             .home-left {
                 h2 {
-                    font-size: 1.6rem;
+                    font-size: 1.2rem;
                 }
                 p {
                     font-size: 1rem;
@@ -72,7 +72,7 @@
         @include medium {
             .home-left {
                 h2 {
-                    font-size: 1.4rem;
+                    font-size: 1.1rem;
                 }
                 p {
                     font-size: 0.9rem;
@@ -82,7 +82,7 @@
         @media (max-width: 786px) {
             .home-left {
                 h2 {
-                    font-size: 1.2rem;
+                    font-size: 1.0rem;
                 }
             }
         }
@@ -105,14 +105,7 @@
                 width: 100vw;
             }
 
-            .home-left {
-                h2 {
-                    font-size: 1.6rem;
-                }
-            }
-
             flex-direction: column;
-
 
             .home-left {
                 margin-top: 100px;

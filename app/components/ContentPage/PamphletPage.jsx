@@ -8,7 +8,8 @@ import * as actions from 'app/actions/actions';
 import { randString } from 'app/extras/helpers';
 import HamburgerButton from 'app/components/Elements/HamburgerButton';
 import BlueBorder from 'app/components/Elements/BlueBorder';
-import MailingListBox from 'app/components/Elements/MailingListBox';
+// import MailingListBox from 'app/components/Elements/MailingListBox';
+import Footer from 'app/components/Elements/Footer';
 
 import bgImg from 'assets/Newtown_Creek_and_Factory.jpg';
 import leftarrow from 'assets/leftarrow.png';
@@ -125,7 +126,7 @@ export class PamphletPage extends React.Component {
                 {nav.visible && <div className='nav-container'><Nav /></div> }
                 {this.renderArrows(position)}
                 <div className='footer fixed-bottom'>
-                    <MailingListBox />
+                    <Footer/>
                 </div>
             </div>
         );

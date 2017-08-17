@@ -3,6 +3,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from 'app/actions/actions';
 
+/**
+ * For future readers of this code - this component is no longer being
+ * used in it's intended form, since we aren't currently collecting
+ * emails. Instaed, it's just a wrapper for an absolutely positioned
+ * footer, with static content inside. I'm leaving the email code
+ * in here for now in case it's needed in the future
+*/
 class MailingListBox extends React.Component {
     constructor(props) {
         super(props);

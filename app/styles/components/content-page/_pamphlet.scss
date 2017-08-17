@@ -134,6 +134,10 @@
         min-height:100vh;
         z-index: 10;
         /*overflow-y: scroll;*/
+
+        .nav-content {
+            margin-bottom: 8rem;
+        }
     }
     /*.show-intro {*/
 
@@ -167,6 +171,7 @@
             .pamphlet-page-header {
                 h1 {
                     font-size: 1.1rem;
+                    padding-left: 4px;
                 }
                 .sub {
                     font-size: 1rem;
@@ -175,6 +180,9 @@
                 }
                 p {
                     font-size: 2vmax;
+                }
+                span {
+                    font-size: 1.1rem;
                 }
             }
 
