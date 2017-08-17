@@ -117,7 +117,7 @@ export default {
                 <p>A Field Guide to the Place Where You Are is an instantiation of that model, further abstracting the form of the experimental field guide.  In its incarnation at 3LD Art and Technology Center in New York City (2017), the subjects of inquiry -- the 3LD site, its infrastructure, and artworks in the interdisciplinary exhibition Works on Water -- reflected the specific present and historical collisions of agents in one space, and also their global attachments to multiple other places and realities, as experienced through their material natures.</p>
                 <p>A Field Guide to the Place Where You Are at 3LD was a sculptural installation and field guide with which participants investigated their material surrounds from atop a post-natural lifeguard stand (an industrial ladder).  Orange numbered stake flags were placed throughout 3LD, and keyed to a laminated field guide accessible at the top of the ladder along with binoculars.  The field guide wove its entries into a fluid geo-temporality: from the past of Greenwich Street (formerly Manhattan’s western shoreline), to the present linkage between the sprinkler system and upstate reservoirs, to the power grid and its potential for a renewables-fueled future.</p>
                 <h2>Press</h2>
-                <p><ExternalLink href='https://hyperallergic.com/386582/works-on-water-triennial'>"The Inaugural Triennial on New York's Waterways Drops Anchor"</ExternalLink>, Allison Meier, Hyperallergic, 2017</p>
+                <p><ExternalLink url='https://hyperallergic.com/386582/works-on-water-triennial'>"The Inaugural Triennial on New York's Waterways Drops Anchor"</ExternalLink>, Allison Meier, Hyperallergic, 2017</p>
             </div>
         )
     },
