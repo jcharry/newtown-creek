@@ -37,7 +37,7 @@ function NavItem(props) {
                 </div>
                 <div className='nav-right'>
                     <h2>{header}</h2>
-                    {icons && <div className='nav-item-icons'>{icons.map(icon => <img src={icon} />)}</div>}
+                    {icons && <div className='nav-item-icons'>{icons.map((icon, index) => <img key={index} src={icon} />)}</div>}
                 </div>
             </Link>
         </div>
