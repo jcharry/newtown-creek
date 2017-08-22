@@ -29,7 +29,6 @@ class InteractiveMap extends React.Component {
     }
 
     svgLoaded(svg) {
-        console.log('svg loaded');
         svg.onmousemove = (e) => {
             const id = e.target.id;
             const acceptableIds = ['Circle-A', 'Group-A', 'A', 'Circle-B', 'Group-B', 'B', 'Circle-C', 'Group-C', 'C', 'Circle-D', 'Group-D', 'D', 'Circle-E', 'Group-E', 'E', 'Circle-F', 'Group-F', 'F', 'Circle-G', 'Group-G', 'G', 'Circle-H', 'Group-H', 'H', 'Circle-I', 'Group-I', 'I', 'Circle-J', 'Group-J', 'J', 'Circle-K', 'Group-K', 'K', 'Circle-L', 'Group-L', 'L', 'Circle-M', 'Group-M', 'M', 'Circle-N', 'Group-N', 'N'];
@@ -56,7 +55,6 @@ class InteractiveMap extends React.Component {
                 if (path.id[path.id.length - 1] === id[id.length - 1]) {
                     path.style.fill = '#EAE730';        // eslint-disable-line
                     letters[i].style.fill = '#0C2D5C';
-                    console.log(id);
                 } else {
                     path.style.fill = '#0C2D5C';        // eslint-disable-line
                     letters[i].style.fill = '#EAE730';

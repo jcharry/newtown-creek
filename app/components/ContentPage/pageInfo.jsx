@@ -107,17 +107,34 @@ export default {
         subHeader: '',
         position: '04',
         shouldShowNumber: false,
+        navIcons: [
+            '/assets/Icon-Pamphlet.png'
+        ],
         url: 'field-guide-model',
         active: false,
-        hasPopup: false,
+        hasPopup: true,
         pageContent: (
             <div className='pamphlet-page-content'>
-                <img alt='coming soon' className='page-badge' src='/assets/in-development.png' />
-                <p>Floating Studio for Dark Ecologies (FSDE) dreams of an ongoing and open library of citizen-driven field guides. The aim of these guides is to embrace the everythingness that – like it or not, pretty or not, dirty or not – constitutes the place where we are. We believe the first step to change requires an unblinkered intimacy with the present/presence of place. The work we have been doing on Newtown Creek in New York, has, from the start, been conceived as a model for coming to know one’s"“pla"e” in the anthropogenic landscape.</p>
-                <p>A Field Guide to the Place Where You Are is an instantiation of that model, further abstracting the form of the experimental field guide.  In its incarnation at 3LD Art and Technology Center in New York City (2017), the subjects of inquiry -- the 3LD site, its infrastructure, and artworks in the interdisciplinary exhibition Works on Water -- reflected the specific present and historical collisions of agents in one space, and also their global attachments to multiple other places and realities, as experienced through their material natures.</p>
-                <p>A Field Guide to the Place Where You Are at 3LD was a sculptural installation and field guide with which participants investigated their material surrounds from atop a post-natural lifeguard stand (an industrial ladder).  Orange numbered stake flags were placed throughout 3LD, and keyed to a laminated field guide accessible at the top of the ladder along with binoculars.  The field guide wove its entries into a fluid geo-temporality: from the past of Greenwich Street (formerly Manhattan’s western shoreline), to the present linkage between the sprinkler system and upstate reservoirs, to the power grid and its potential for a renewables-fueled future.</p>
+                <img alt='kids on a ladder' className='page-badge' src='/assets/KIDS.jpg' />
+                <p>Floating Studio for Dark Ecologies (FSDE) dreams of an ongoing and open library of citizen-driven field guides. The aim of these guides is to embrace the everythingness that – like it or not, pretty or not, dirty or not – constitutes the place where we are. We believe the first step to change requires an unblinkered intimacy with the present/presence of place. The work we have been doing on Newtown Creek in New York, has, from the start, been conceived as a model for coming to know one's "place" in the anthropogenic landscape.</p>
+                <p><em>A Field Guide to the Place Where You Are</em> is an instantiation of that model, further abstracting the form of the experimental field guide.  In its incarnation at 3LD Art and Technology Center in New York City (2017), the subjects of inquiry -- the 3LD site, its infrastructure, and artworks in the interdisciplinary exhibition Works on Water -- reflected the specific present and historical collisions of agents in one space, and also their global attachments to multiple other places and realities, as experienced through their material natures.</p>
+                <p><em>A Field Guide to the Place Where You Are</em> at 3LD was a sculptural installation and field guide with which participants investigated their material surrounds from atop a post-natural lifeguard stand (an industrial ladder).  Orange numbered stake flags were placed throughout 3LD, and keyed to a laminated field guide accessible at the top of the ladder along with binoculars.  The field guide wove its entries into a fluid geo-temporality: from the past of Greenwich Street (formerly Manhattan’s western shoreline), to the present linkage between the sprinkler system and upstate reservoirs, to the power grid and its potential for a renewables-fueled future.</p>
                 <h2>Press</h2>
                 <p><ExternalLink url='https://hyperallergic.com/386582/works-on-water-triennial'>"The Inaugural Triennial on New York's Waterways Drops Anchor"</ExternalLink>, Allison Meier, Hyperallergic, 2017</p>
+            </div>
+            ),
+        popupButtonText: 'Download the PDF',
+        popupButtonIcons: [
+            '/assets/Icon-Pamphlet.png'
+        ],
+        popupTitle: 'Use these materials',
+        popupContent: (
+            <div className='popup-content'>
+                <ol>
+                    <li>Download this pamphlet to experience how we turned an industrial theater space into a site filled with natural histories, past, present, and future.
+                        <a href='/assets/wow-fieldguide-v6.pdf' download='wow-fieldguide-v6.pdf'>Download</a>
+                    </li>
+                </ol>
             </div>
         )
     },

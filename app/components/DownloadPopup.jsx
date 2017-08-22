@@ -10,12 +10,38 @@ export class DownloadPopup extends React.Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.handlePortalClick = this.handlePortalClick.bind(this);
+        this.handleEsc = this.handleEsc.bind(this);
     }
+
+    componentDidMount() {
+        document.addEventListener('keyup', this.handleEsc);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('keyup', this.handleEsc);
+    }
+
     handleClick(e) {
         const { dispatch } = this.props;
         e.preventDefault();
         dispatch(actions.hideDownloadPopup());
     }
+
+    handleEsc(e) {
+        const { dispatch } = this.props;
+        if (e.keyCode === 27) {
+            dispatch(actions.hideDownloadPopup());
+        }
+    }
+
+    handlePortalClick(e) {
+        if (e.target.getAttribute('class') === 'popup-container') {
+            const { dispatch } = this.props;
+            dispatch(actions.hideDownloadPopup());
+        }
+    }
+
     render() {
         const style = {};
         const { visible, pageData } = this.props;
@@ -26,7 +52,7 @@ export class DownloadPopup extends React.Component {
         }
 
         return (
-            <div className='popup-container' style={style}>
+            <div onClick={this.handlePortalClick} className='popup-container' style={style}>
                 <div className='popup'>
                     <h2>{pageData.popupTitle}</h2>
                     {pageData.popupContent}

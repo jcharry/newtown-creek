@@ -67,6 +67,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: $font-normal;
+    -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, p {
