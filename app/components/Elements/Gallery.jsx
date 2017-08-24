@@ -6,6 +6,7 @@ import BlueBorder from 'app/components/Elements/BlueBorder';
 import HamburgerButton from 'app/components/Elements/HamburgerButton';
 import leftarrow from 'assets/leftarrow.png';
 import rightarrow from 'assets/rightarrow.png';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Gallery extends React.Component {
     constructor(props) {
@@ -68,7 +69,6 @@ class Gallery extends React.Component {
 
     handleKey(e) {
         const { dispatch } = this.props;
-        console.log(e);
         if (e.keyCode === 27) {
             this.toggleLightbox();
         } else if (e.keyCode === 39) {
@@ -106,14 +106,21 @@ class Gallery extends React.Component {
                         beforeClose: 'lightboxOverlay_before-close'
                     }}
                     isOpen={isOpen}
+                    contentLabel='Lightbox'
                 >
                     <HamburgerButton handleClick={this.toggleLightbox} open />
                     <BlueBorder />
-                    <div name="left" onClick={this.handleArrowClick} className='arrow-img'>
+                    <div name="left" onClick={this.handleArrowClick} className='arrow-img left-arrow'>
                         <img src={leftarrow} alt='click to go to previous page' />
                     </div>
-                    <img className='main-img' src={assets[currentIndex]} />
-                    <div name="right" onClick={this.handleArrowClick} className='arrow-img'>
+                    <ReactCSSTransitionGroup
+                        transitionName="carousel"
+                        transitionEnterTimeout={500}
+                        transitionLeaveTimeout={500}
+                    >
+                        <img key={assets[currentIndex]} className='main-img' src={assets[currentIndex]} />
+                    </ReactCSSTransitionGroup>
+                    <div name="right" onClick={this.handleArrowClick} className='arrow-img right-arrow'>
                         <img src={rightarrow} alt='click to go to next page' />
                     </div>
                 </Modal>

@@ -5,7 +5,6 @@
     margin-bottom: 6rem;
 
     .gallery-trigger {
-        // box-sizing: border-box;
         background: transparent;
         border: none;
         border-radius: 8px;
@@ -45,12 +44,56 @@
     bottom: 60px;
     outline: none;
 
+    span {
+        height: 100%;
+    }
+
     .main-img {
         height: 100%;
         border-radius: 8px;
+        position: relative;
+    }
+
+    .carousel-appear {
+        opacity: 0;
+        height: 100%;
+    }
+
+    .carousel-appear.carousel-appear-active {
+        transition: opacity 500ms ease-in;
+        height: 100%;
+    }
+
+    .carousel-enter {
+        position:absolute;
+        opacity: 0.1;
+        height: 100%;
+        transform: translate(-100%, 0) scale(0.5);
+    }
+
+    .carousel-enter.carousel-enter-active {
+        opacity: 1;
+        transition: opacity 500ms ease-in, transform 500ms ease-in-out; 
+        transform: translate(-50%, 0) scale(1);
+    }
+
+    .carousel-leave {
+        position: absolute;
+        opacity: 1;
+        height: 100%;
+        transform: translate(-50%, 0);
+    }
+
+    .carousel-leave.carousel-leave-active {
+        position: absolute;
+        opacity: 0.01;
+        transition: opacity 500ms ease-in, transform 500ms ease-in-out;
+        transform: translate(50%, 0) scale(0.5);
+        height: 100%;
     }
 
     .arrow-img {
+        position: absolute;
         height: 100%;
         display: flex;
         align-items: center;
@@ -62,6 +105,14 @@
             max-width: 25px;
             pointer-events: none;
         }
+    }
+
+    .left-arrow {
+        left: 0;
+    }
+
+    .right-arrow {
+        right: 0;
     }
 
     .hamburger {
