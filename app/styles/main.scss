@@ -19,6 +19,7 @@
 @import 'components/elements/interactive-map';
 @import 'components/elements/external-link';
 @import 'components/elements/footer';
+@import 'components/elements/gallery';
 
 /* Responsive stuff.
  * see here - https://css-tricks.com/snippets/html/responsive-meta-tag/
@@ -97,4 +98,8 @@ p.heavy {
     bottom: 0px;
     left: 0px;
     z-index: 15;
+}
+
+.blur {
+    filter: blur(5px);
 }

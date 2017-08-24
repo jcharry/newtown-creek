@@ -78,3 +78,12 @@ export const signedupReducer = (state = false, action) => {
             return state;
     }
 };
+
+export const lightboxReducer = (state = false, action) => {
+    switch (action.type) {
+        case 'TOGGLE_LIGHTBOX':
+            return !state;
+        default:
+            return state;
+    }
+};

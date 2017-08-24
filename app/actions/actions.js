@@ -65,3 +65,6 @@ export const signUp = email =>
             });
     };
 
+export const toggleLightbox = () => ({
+    type: 'TOGGLE_LIGHTBOX'
+});

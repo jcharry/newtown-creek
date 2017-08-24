@@ -5,6 +5,7 @@ import React from 'react'; // eslint-disable-line
 import ReactSVG from 'react-svg';
 import InteractiveMap from 'app/components/Elements/InteractiveMap';
 import ExternalLink from 'app/components/Elements/ExternalLink';
+import Gallery from 'app/components/Elements/Gallery';
 
 export default {
     introduction: {
@@ -41,7 +42,7 @@ export default {
         pageContent: (
             <div className='pamphlet-page-content'>
                 <p className='heavy'>What does a sludge boat look like, and what does it do? Have you ever watched old automobile carcasses being collected at Sims Metal Management?</p>
-                <img className='body-img' src='/assets/IMG_2152sm.jpg'/>
+                <img alt='whale creek pamphlet' className='body-img' src='/assets/IMG_2152sm.jpg' />
                 <p>A Field Guide to Whale Creek situates you between the industrial and the "natural" at the Newtown Creek Nature Walk, designed by George Trakas and built in 2007. Along the edge of the Creek you'll have the perfect vantage point for observing and identifying the industrial, civic and ecological entities that cohabitate near the Whale Creek tributary, from canoes to recycling barges. A Field Guide to Whale Creek lays bare the power and complexity in trying to name what surrounds you.</p>
                 <InteractiveMap />
                 <h2>Press</h2>
@@ -115,12 +116,23 @@ export default {
         hasPopup: true,
         pageContent: (
             <div className='pamphlet-page-content'>
-                <img alt='kids on a ladder' style={{height: 'auto', width: '100%'}} className='page-badge' src='/assets/KIDS.jpg' />
+                <img alt='kids on a ladder' style={{ height: 'auto', width: '100%' }} className='page-badge' src='/assets/KIDS.jpg' />
                 <p>Floating Studio for Dark Ecologies (FSDE) dreams of an ongoing and open library of citizen-driven field guides. The aim of these guides is to embrace the everythingness that – like it or not, pretty or not, dirty or not – constitutes the place where we are. We believe the first step to change requires an unblinkered intimacy with the present/presence of place. The work we have been doing on Newtown Creek in New York, has, from the start, been conceived as a model for coming to know one's "place" in the anthropogenic landscape.</p>
                 <p><em>A Field Guide to the Place Where You Are</em> is an instantiation of that model, further abstracting the form of the experimental field guide.  In its incarnation at 3LD Art and Technology Center in New York City (2017), the subjects of inquiry -- the 3LD site, its infrastructure, and artworks in the interdisciplinary exhibition Works on Water -- reflected the specific present and historical collisions of agents in one space, and also their global attachments to multiple other places and realities, as experienced through their material natures.</p>
                 <p><em>A Field Guide to the Place Where You Are</em> at 3LD was a sculptural installation and field guide with which participants investigated their material surrounds from atop a post-natural lifeguard stand (an industrial ladder).  Orange numbered stake flags were placed throughout 3LD, and keyed to a laminated field guide accessible at the top of the ladder along with binoculars.  The field guide wove its entries into a fluid geo-temporality: from the past of Greenwich Street (formerly Manhattan’s western shoreline), to the present linkage between the sprinkler system and upstate reservoirs, to the power grid and its potential for a renewables-fueled future.</p>
                 <h2>Press</h2>
                 <p><ExternalLink url='https://hyperallergic.com/386582/works-on-water-triennial'>"The Inaugural Triennial on New York's Waterways Drops Anchor"</ExternalLink>, Allison Meier, Hyperallergic, 2017</p>
+                <h2>Documentation from <em>A Field Guide to the Place Where You Are</em></h2>
+                <Gallery assets={[
+                    '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_1.jpg',
+                    '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_2.jpg',
+                    '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_3.jpg',
+                    '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_4.jpg',
+                    '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_5.jpg',
+                    '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_6.jpg',
+                    '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_7.jpg',
+                    '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_8.jpg',
+                    ]} />
             </div>
             ),
         popupButtonText: 'Download the PDF',

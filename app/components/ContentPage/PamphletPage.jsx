@@ -11,7 +11,6 @@ import BlueBorder from 'app/components/Elements/BlueBorder';
 // import MailingListBox from 'app/components/Elements/MailingListBox';
 import Footer from 'app/components/Elements/Footer';
 
-import bgImg from 'assets/Newtown_Creek_and_Factory.jpg';
 import leftarrow from 'assets/leftarrow.png';
 import rightarrow from 'assets/rightarrow.png';
 
@@ -61,7 +60,7 @@ export class PamphletPage extends React.Component {
             nextPage;
 
         // Find previous and next page
-        Object.keys(allPages).forEach((key) => {
+        Object.keys(allPages).forEach(key => {
             const currentPage = parseInt(allPages[key].position, 10);
             if (currentPage === pos - 1) {
                 prevPage = allPages[key];
@@ -117,7 +116,7 @@ export class PamphletPage extends React.Component {
                             onClick={this.handleDownloadClick}
                         >
                             <p>{pageData.popupButtonText}</p>
-                            {pageData.popupButtonIcons && pageData.popupButtonIcons.map(asset => <img src={asset}/>)}
+                            {pageData.popupButtonIcons && pageData.popupButtonIcons.map(asset => <img key={asset} src={asset}/>)}
                         </div>
                     }
                 </div>
@@ -133,13 +132,7 @@ export class PamphletPage extends React.Component {
     }
 
 }
-                    //{pageData.pageContent && pageData.pageContent.map((content) => {
-                        //return content;
-                    //})}
 
-// PampletPage.defaultProps = {
-//
-// }
 PamphletPage.propTypes = {
     allPages: React.PropTypes.object.isRequired,
     dispatch: React.PropTypes.func.isRequired,
