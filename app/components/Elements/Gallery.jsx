@@ -57,9 +57,9 @@ class Gallery extends React.Component {
 
         if (!isOpen) {
             document.addEventListener('keyup', this.handleKey);
-            document.querySelector('#app').classList.add('blur');
+            document.querySelector('#app').classList.add('page-blur');
         } else {
-            document.querySelector('#app').classList.remove('blur');
+            document.querySelector('#app').classList.remove('page-blur');
             document.removeEventListener('keyup', this.handleKey);
         }
 
