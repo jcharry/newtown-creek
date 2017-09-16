@@ -123,16 +123,19 @@ export default {
                 <h2>Press</h2>
                 <p><ExternalLink url='https://hyperallergic.com/386582/works-on-water-triennial'>"The Inaugural Triennial on New York's Waterways Drops Anchor"</ExternalLink>, Allison Meier, Hyperallergic, 2017</p>
                 <h2>Documentation from <em>A Field Guide to the Place Where You Are</em></h2>
-                <Gallery assets={[
-                    '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_1.jpg',
-                    '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_2.jpg',
-                    '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_3.jpg',
-                    '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_4.jpg',
-                    '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_5.jpg',
-                    '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_6.jpg',
-                    '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_7.jpg',
-                    '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_8.jpg',
-                    ]} />
+                <Gallery
+                    images={[
+                        '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_1.jpg',
+                        '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_2.jpg',
+                        '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_3.jpg',
+                        '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_4.jpg',
+                        '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_5.jpg',
+                        '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_6.jpg',
+                        '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_7.jpg',
+                        '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_8.jpg'
+                    ]}
+                />
+                <p />
             </div>
             ),
         popupButtonText: 'Download the PDF',

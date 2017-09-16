@@ -1,132 +1,57 @@
+/* global Image */
 import React from 'react';
-import { connect } from 'react-redux';
-import Modal from 'react-modal';
-import * as actions from 'app/actions/actions';
-import BlueBorder from 'app/components/Elements/BlueBorder';
-import HamburgerButton from 'app/components/Elements/HamburgerButton';
-import leftarrow from 'assets/leftarrow.png';
-import rightarrow from 'assets/rightarrow.png';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import ReactGallery from 'react-grid-gallery';
 
 class Gallery extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            currentIndex: 0
+            images: []
         };
 
-        this.handleClick = this.handleClick.bind(this);
-        this.handleKey = this.handleKey.bind(this);
-        this.handleArrowClick = this.handleArrowClick.bind(this);
-        this.toggleLightbox = this.toggleLightbox.bind(this);
-        this.changeImage = this.changeImage.bind(this);
+        this.getImageSize = this.getImageSize.bind(this);
     }
 
-    handleArrowClick(e) {
-        this.changeImage(e.target.getAttribute('name'));
-    }
+    componentDidMount() {
+        const { images } = this.props;
+        const promises = images.map(this.getImageSize);
 
-    changeImage(dir) {
-        const { assets } = this.props;
-        const len = assets.length;
-
-        if (dir === 'right') {
-            this.setState(prevState => ({
-                currentIndex: prevState.currentIndex + 1 < len ? prevState.currentIndex + 1 : 0
+        Promise.all(promises).then(data => {
+            const imgs = data.map(img => ({
+                thumbnailWidth: img.width,
+                thumbnailHeight: img.height,
+                src: img.imgSrc,
+                thumbnail: img.imgSrc
             }));
-        } else {
-            this.setState(prevState => ({
-                currentIndex: prevState.currentIndex - 1 > -1 ? prevState.currentIndex - 1 : len - 1
-            }));
-        }
-    }
 
-    handleClick(index) {
-        const { assets, dispatch, isOpen } = this.props;
-        const asset = assets[index];
-
-        this.setState({
-            currentIndex: index
-        }, () => {
-            this.toggleLightbox();
+            this.setState({
+                images: imgs
+            });
         });
     }
 
-    toggleLightbox() {
-        const { isOpen, dispatch } = this.props;
-
-        if (!isOpen) {
-            document.addEventListener('keyup', this.handleKey);
-            document.querySelector('#app').classList.add('page-blur');
-        } else {
-            document.querySelector('#app').classList.remove('page-blur');
-            document.removeEventListener('keyup', this.handleKey);
-        }
-
-        dispatch(actions.toggleLightbox());
-    }
-
-    handleKey(e) {
-        const { dispatch } = this.props;
-        if (e.keyCode === 27) {
-            this.toggleLightbox();
-        } else if (e.keyCode === 39) {
-            // right
-            this.changeImage('right');
-        } else if (e.keyCode === 37) {
-            // left
-            this.changeImage('left');
-        }
+    getImageSize(imgSrc) {
+        return new Promise((resolve, reject) => {
+            const newImg = new Image();
+            newImg.onload = function() {
+                const width = newImg.width;
+                const height = newImg.height;
+                resolve({ imgSrc, width, height });
+            };
+            newImg.src = imgSrc; // this must be done AFTER setting onload
+        });
     }
 
     render() {
-        const { assets, isOpen } = this.props;
-        const { currentIndex } = this.state;
-
         return (
-            <div className="gallery">
-                {assets.map((asset, index) => {
-                    return (
-                    <button key={index} onClick={() => { this.handleClick(index) }} className='gallery-trigger'>
-                            <img className="img" src={asset} />
-                        </button>
-                    );
-                })}
-
-                <Modal
-                    className={{
-                        base: 'lightbox',
-                        afterOpen: 'lightbox_after-open',
-                        beforeClose: 'myClass_before-close'
-                    }}
-                    overlayClassName={{
-                        base: 'lightboxOverlay',
-                        afterOpen: 'lightboxOverlay_after-open',
-                        beforeClose: 'lightboxOverlay_before-close'
-                    }}
-                    isOpen={isOpen}
-                    contentLabel='Lightbox'
-                >
-                    <HamburgerButton handleClick={this.toggleLightbox} open />
-                    <BlueBorder />
-                    <div name="left" onClick={this.handleArrowClick} className='arrow-img left-arrow'>
-                        <img src={leftarrow} alt='click to go to previous page' />
-                    </div>
-                    <ReactCSSTransitionGroup
-                        transitionName="carousel"
-                        transitionEnterTimeout={500}
-                        transitionLeaveTimeout={500}
-                    >
-                        <img key={assets[currentIndex]} className='main-img' src={assets[currentIndex]} />
-                    </ReactCSSTransitionGroup>
-                    <div name="right" onClick={this.handleArrowClick} className='arrow-img right-arrow'>
-                        <img src={rightarrow} alt='click to go to next page' />
-                    </div>
-                </Modal>
-            </div>
+            <ReactGallery enableImageSelection={false} style={{ width: '100%' }} images={this.state.images} />
         );
     }
 }
 
-export default connect(state => ({isOpen: state.isLightboxOpen}))(Gallery);
+Gallery.propTypes = {
+    images: React.PropTypes.array.isRequired
+};
+
+export default Gallery;

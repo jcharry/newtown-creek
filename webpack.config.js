@@ -119,16 +119,6 @@ module.exports = {
                 loader: 'babel-loader',
                 exclude: /node_modules/
             },
-            // {
-            //     test: /\.js?$/,
-            //     exclude: /(node_modules|bower_components)/,
-            //     loader: 'eslint-loader'
-            // },
-            // {
-            //     test: /\.jsx?$/,
-            //     exclude: /(node_modules|bower_components)/,
-            //     loader: 'eslint-loader'
-            // },
             {
                 test: /\.(otf|eot|ttf|woff|woff2)$/,
                 loader: 'file-loader?name=assets/fonts/[name].[ext]'
