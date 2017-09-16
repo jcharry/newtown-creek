@@ -10,13 +10,12 @@
   "scripts": {
     "test": "NODE_ENV=test karma start",
     "build": "NODE_ENV=production webpack",
-    "commitBuild": "git commit -am 'update build'",
     "dev": "NODE_ENV=development webpack-dev-server",
     "start": "node ./server/server.js",
     "prod": "NODE_ENV=production webpack && node server.js",
     "doc": "./node_modules/.bin/jsdoc -c ./jsdoc.conf.json -r",
     "deploy": "NODE_ENV=production webpack && git push heroku master",
-    "prepush": "npm run build && npm run commitBuild"
+    "precommit": "npm run build && git add dist/"
   },
   "author": "",
   "license": "ISC",
