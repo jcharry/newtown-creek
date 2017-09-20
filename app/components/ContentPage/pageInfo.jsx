@@ -43,11 +43,81 @@ export default {
             <div className='pamphlet-page-content'>
                 <p className='heavy'>What does a sludge boat look like, and what does it do? Have you ever watched old automobile carcasses being collected at Sims Metal Management?</p>
                 <img alt='whale creek pamphlet' className='body-img' src='/assets/IMG_2152sm.jpg' />
-                <p>A Field Guide to Whale Creek situates you between the industrial and the "natural" at the Newtown Creek Nature Walk, designed by George Trakas and built in 2007. Along the edge of the Creek you'll have the perfect vantage point for observing and identifying the industrial, civic and ecological entities that cohabitate near the Whale Creek tributary, from canoes to recycling barges. A Field Guide to Whale Creek lays bare the power and complexity in trying to name what surrounds you.</p>
+                <p>A Field Guide to Whale Creek situates you between the industrial and the "natural" at the Newtown Creek Nature Walk, designed by George Trakas and built in 2007. Along the edge of the Creek you'll have the perfect vantage point for observing and identifying the industrial, civic and ecological entities that cohabitate near the Whale Creek tributary, from canoes to recycling barges. A Field Guide to Whale Creek lays bare the power and complexity in trying to name what surrounds you. Grab our Expedition Materials (<ExternalLink url='http://www.newtowncreekfieldguide.com/assets/031217_FieldGuide_Final_v10-web.pdf'>pamphlet</ExternalLink> and <ExternalLink url='https://itunes.apple.com/us/podcast/oil-twitchers-barge-spotters-field-guide-to-whale-creek/id1260192343?mt=2'>audio guide</ExternalLink>), and head out to the Creek yourself!</p>
                 <InteractiveMap />
                 <h2>Press</h2>
                 <p><ExternalLink url='https://hyperallergic.com/385283/an-audio-tour-dredges-up-dark-ecologies-of-nycs-polluted-waterways/'>"An Audio Tour Dredges Up the Dark Ecology of NYC's Newtown Creek"</ExternalLink>, Allison Meier, Hyperallergic, 2017</p>
                 <p><ExternalLink url='https://hyperallergic.com/386577/tune-in-to-the-streets-of-new-york-with-these-seven-sound-walks/'>"7 Audio Journeys that Let You Escape New York While Walking Its Streets"</ExternalLink>, Allison Meier, Hyperallergic, 2017"</p>
+                <h2>Documentation</h2>
+                <Gallery
+                    images={[
+                        {
+                            src: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_1.jpg',
+                            thumbnail: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_1_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_2.jpg',
+                            thumbnail: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_2_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_3.jpg',
+                            thumbnail: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_3_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_4.jpg',
+                            thumbnail: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_4_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_5.jpg',
+                            thumbnail: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_5_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_6.jpg',
+                            thumbnail: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_6_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_7.jpg',
+                            thumbnail: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_7_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_8.jpg',
+                            thumbnail: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_8_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_9.jpg',
+                            thumbnail: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_9_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_10.jpg',
+                            thumbnail: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_10_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_11.jpg',
+                            thumbnail: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_11_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_12.jpg',
+                            thumbnail: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_12_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_13.jpg',
+                            thumbnail: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_13_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_14.jpg',
+                            thumbnail: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_14_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_15.jpg',
+                            thumbnail: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_15_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_16.jpg',
+                            thumbnail: '/assets/oil-twitchers-and-barge-spotters/oil-twitchers-and-barge-spotters_16_thumb.jpg'
+                        }
+                    ]}
+                />
+                <p />
             </div>
         ),
         popupButtonText: 'EXPEDITION MATERIALS',
@@ -63,7 +133,7 @@ export default {
                         <a href='/assets/031217_FieldGuide_Final_v10-web.pdf' download='031217_FieldGuide_Final_v10-web.pdf'>Download</a>
                     </li>
                     <li>Download the audio experience for a guided walking tour of the site.
-                        <ExternalLink url='https://soundcloud.com/user-312883240/sets/whalecreekfieldguide'>Download</ExternalLink>
+                        <ExternalLink url='https://itunes.apple.com/us/podcast/oil-twitchers-barge-spotters-field-guide-to-whale-creek/id1260192343?mt=2'>Download</ExternalLink>
                     </li>
                 </ol>
             </div>
@@ -125,14 +195,38 @@ export default {
                 <h2>Documentation from <em>A Field Guide to the Place Where You Are</em></h2>
                 <Gallery
                     images={[
-                        '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_1.jpg',
-                        '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_2.jpg',
-                        '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_3.jpg',
-                        '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_4.jpg',
-                        '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_5.jpg',
-                        '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_6.jpg',
-                        '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_7.jpg',
-                        '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_8.jpg'
+                        {
+                            src: '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_1.jpg',
+                            thumbnail: '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_1_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_2.jpg',
+                            thumbnail: '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_2_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_3.jpg',
+                            thumbnail: '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_3_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_4.jpg',
+                            thumbnail: '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_4_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_5.jpg',
+                            thumbnail: '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_5_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_6.jpg',
+                            thumbnail: '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_6_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_8.jpg',
+                            thumbnail: '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_8_thumb.jpg'
+                        },
+                        {
+                            src: '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_7.jpg',
+                            thumbnail: '/assets/a-field-guide-to-the-place-where-you-are/a-field-guide-to-the-place-where-you-are_7_thumb.jpg'
+                        }
                     ]}
                 />
                 <p />

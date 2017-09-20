@@ -15,14 +15,14 @@ class Gallery extends React.Component {
 
     componentDidMount() {
         const { images } = this.props;
-        const promises = images.map(this.getImageSize);
+        const promises = images.map(img => this.getImageSize(img.src, img.thumbnail));
 
         Promise.all(promises).then(data => {
             const imgs = data.map(img => ({
                 thumbnailWidth: img.width,
                 thumbnailHeight: img.height,
                 src: img.imgSrc,
-                thumbnail: img.imgSrc
+                thumbnail: img.thumbSrc
             }));
 
             this.setState({
@@ -31,15 +31,15 @@ class Gallery extends React.Component {
         });
     }
 
-    getImageSize(imgSrc) {
+    getImageSize(imgSrc, thumbSrc) {
         return new Promise((resolve, reject) => {
             const newImg = new Image();
             newImg.onload = function() {
                 const width = newImg.width;
                 const height = newImg.height;
-                resolve({ imgSrc, width, height });
+                resolve({ imgSrc, thumbSrc, width, height });
             };
-            newImg.src = imgSrc; // this must be done AFTER setting onload
+            newImg.src = thumbSrc; // this must be done AFTER setting onload
         });
     }
 

@@ -1,14 +1,11 @@
 import React from 'react';
-//import * as redux from 'redux';
 import { connect } from 'react-redux';
 import Link from 'react-router/lib/Link';
 import Nav from 'app/components/Nav/Nav';
 import Logo from 'app/components/Elements/Logo';
 import * as actions from 'app/actions/actions';
-import { randString } from 'app/extras/helpers';
 import HamburgerButton from 'app/components/Elements/HamburgerButton';
 import BlueBorder from 'app/components/Elements/BlueBorder';
-// import MailingListBox from 'app/components/Elements/MailingListBox';
 import Footer from 'app/components/Elements/Footer';
 
 import leftarrow from 'assets/leftarrow.png';
@@ -101,7 +98,7 @@ export class PamphletPage extends React.Component {
 
 
         return (
-            <div className={nav.visible ? 'pamphlet-page pamphlet-page-fixed' : 'pamphlet-page'} ref={(c) => { this.elt = c; }} style={style} >
+            <div className={nav.visible ? 'pamphlet-page pamphlet-page-fixed' : 'pamphlet-page'} ref={c => { this.elt = c; }} style={style} >
                 <BlueBorder />
                 <Link to='/'><Logo /></Link>
                 <div className='pamphlet-page-header'>
@@ -116,16 +113,16 @@ export class PamphletPage extends React.Component {
                             onClick={this.handleDownloadClick}
                         >
                             <p>{pageData.popupButtonText}</p>
-                            {pageData.popupButtonIcons && pageData.popupButtonIcons.map(asset => <img key={asset} src={asset}/>)}
+                            {pageData.popupButtonIcons && pageData.popupButtonIcons.map(asset => <img alt='icon' key={asset} src={asset} />)}
                         </div>
                     }
                 </div>
                 {pageData.pageContent && pageData.pageContent}
-                <HamburgerButton handleClick={this.handleMenuClick} open={nav.visible}/>
+                <HamburgerButton handleClick={this.handleMenuClick} open={nav.visible} />
                 {nav.visible && <div className='nav-container'><Nav /></div> }
                 {this.renderArrows(position)}
                 <div className='footer fixed-bottom'>
-                    <Footer/>
+                    <Footer />
                 </div>
             </div>
         );
@@ -139,6 +136,10 @@ PamphletPage.propTypes = {
     nav: React.PropTypes.object.isRequired,
     pageData: React.PropTypes.object.isRequired,
     blurred: React.PropTypes.bool
+};
+
+PamphletPage.defaultProps = {
+    blurred: false
 };
 
 export default connect()(PamphletPage);
