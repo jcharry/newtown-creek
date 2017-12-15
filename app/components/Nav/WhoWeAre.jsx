@@ -20,14 +20,17 @@ const WhoWeAre = () =>
             <ul className='collaborators-list'>
                 <li><ExternalLink url='https://jcharry.com'>Jamie Charry</ExternalLink> (website developer)</li>
                 <li><ExternalLink url='http://ckdols.com'>Chester Dols</ExternalLink> (map designer, fabricator)</li>
+                <li>Kelsa Trom (ethnographic research, workshop design)</li>
+                <li>Danielle Butler (boat captain)</li>
                 <li><ExternalLink url='https://m.soundcloud.com/janecramer'>Jane Cramer</ExternalLink> (audio engineer)</li>
                 <li><ExternalLink url='http://bruces2706.wixsite.com/bruceshackelford'>Bruce Shackelford</ExternalLink> (voiceover actor)</li>
                 <li><ExternalLink url='http://articulatedworks.com/justinpeake/'>Justin Peake</ExternalLink> (composer)</li>
                 <li><ExternalLink url='http://elizabeth-henaff.net/'>Elizabeth Hénaf</ExternalLink>f (microbiologist)</li>
-                <li><ExternalLink url='http://www.ianquate.com/'>Ian Quate</ExternalLink> (landscape architect)</li>
                 <li><ExternalLink url='http://connorgfrew.tumblr.com/'>Connor Frew</ExternalLink> (mentee)</li>
                 <li><ExternalLink url='http://www.nolongerempty.org/home/who-we-are/team/'>Carol Stakenas</ExternalLink> (project consultant)</li>
             </ul>
+            <p>Our work is made possible in part with the generous support of the Brooklyn Arts Council
+and Tisch School of the Arts, New York University.</p>
         </div>
 
 export default WhoWeAre;
