@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="14px" viewBox="0 0 21 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon-Audio</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="10.563 8.0005 0 8.0005 0 4.4375 0 0.8745 10.563 0.8745 10.563 8.0005"></polygon>
+        <polygon id="path-3" points="0.437 8 4 8 4 4.43725 4 0.8745 0.437 0.8745 0.437 8"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01-Landing" transform="translate(-1060.000000, -317.000000)">
+            <g id="Icon-Audio" transform="translate(1054.000000, 317.000000)">
+                <g id="Group-3" transform="translate(0.000000, 5.125000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M6,4.4375 C6,6.4045 7.596,8.0005 9.563,8.0005 L9.563,0.8745 C7.596,0.8745 6,2.4705 6,4.4375" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                </g>
+                <g id="Group-6" transform="translate(23.000000, 5.125000)">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <g id="Clip-5"></g>
+                    <path d="M4,4.4375 C4,2.4705 2.404,0.8745 0.437,0.8745 L0.437,8.0005 C2.404,8.0005 4,6.4045 4,4.4375" id="Fill-4" fill="#FFFFFF" mask="url(#mask-4)"></path>
+                </g>
+                <path d="M16.5,0 C13.613,0 11.25,2.362 11.25,5.25 L11.25,13.125 L12.562,13.125 L12.562,5.25 C12.562,3.079 14.329,1.312 16.5,1.312 C18.671,1.312 20.438,3.079 20.438,5.25 L20.438,13.125 L21.75,13.125 L21.75,5.25 C21.75,2.362 19.389,0 16.5,0" id="Fill-7" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

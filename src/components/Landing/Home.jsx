@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -74,8 +75,8 @@ export class Home extends React.Component {
 }
 
 Home.propTypes = {
-    dispatch: React.PropTypes.func,
-    visible: React.PropTypes.bool
+    dispatch: PropTypes.func,
+    visible: PropTypes.bool
 };
 
 export default connect()(Home);

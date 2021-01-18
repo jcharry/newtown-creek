@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/actions';
@@ -115,9 +116,9 @@ export class Nav extends React.Component {
 }
 
 Nav.propTypes = {
-    nav: React.PropTypes.object.isRequired,
-    dispatch: React.PropTypes.func.isRequired,
-    pageInfo: React.PropTypes.object.isRequired
+    nav: PropTypes.object.isRequired,
+    dispatch: PropTypes.func.isRequired,
+    pageInfo: PropTypes.object.isRequired
 };
 
 export default connect(state => ({

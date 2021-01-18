@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -15,9 +16,9 @@ export class PopupItem extends React.Component {
 }
 
 PopupItem.propTypes = {
-    linkText: React.PropTypes.string,
-    rest: React.PropTypes.string,
-    url: React.PropTypes.string
+    linkText: PropTypes.string,
+    rest: PropTypes.string,
+    url: PropTypes.string
 };
 
 export default connect()(PopupItem);

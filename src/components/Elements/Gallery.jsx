@@ -1,4 +1,6 @@
 /* global Image */
+import PropTypes from 'prop-types';
+
 import React from 'react';
 import ReactGallery from 'react-grid-gallery';
 
@@ -51,7 +53,7 @@ class Gallery extends React.Component {
 }
 
 Gallery.propTypes = {
-    images: React.PropTypes.array.isRequired
+    images: PropTypes.array.isRequired
 };
 
 export default Gallery;

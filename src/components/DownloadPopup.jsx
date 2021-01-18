@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 
-import PopupItem from './/PopupItem';
+import PopupItem from './PopupItem';
 
 import * as actions from '../actions/actions'
 import { randString } from '../extras/helpers'
@@ -68,9 +69,9 @@ export class DownloadPopup extends React.Component {
 }
 
 DownloadPopup.propTypes = {
-    visible: React.PropTypes.bool,
-    dispatch: React.PropTypes.func,
-    pageData: React.PropTypes.object
+    visible: PropTypes.bool,
+    dispatch: PropTypes.func,
+    pageData: PropTypes.object
 };
 
 export default connect((state) => {

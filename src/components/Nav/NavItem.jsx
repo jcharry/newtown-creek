@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -49,14 +50,14 @@ NavItem.defaultProps = {
 };
 
 NavItem.propTypes = {
-    header: React.PropTypes.string.isRequired,
-    subHeader: React.PropTypes.string,
-    url: React.PropTypes.string.isRequired,
-    position: React.PropTypes.string.isRequired,
-    active: React.PropTypes.bool.isRequired,
-    handleMouseEnter: React.PropTypes.func.isRequired,
-    handleMouseLeave: React.PropTypes.func.isRequired,
-    shouldBlur: React.PropTypes.bool.isRequired
+    header: PropTypes.string.isRequired,
+    subHeader: PropTypes.string,
+    url: PropTypes.string.isRequired,
+    position: PropTypes.string.isRequired,
+    active: PropTypes.bool.isRequired,
+    handleMouseEnter: PropTypes.func.isRequired,
+    handleMouseLeave: PropTypes.func.isRequired,
+    shouldBlur: PropTypes.bool.isRequired
 };
 
 export default NavItem;

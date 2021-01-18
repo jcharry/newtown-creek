@@ -4,6 +4,8 @@
  *
  * Distributed under terms of the MIT license.
  */
+import PropTypes from 'prop-types';
+
 import React from 'react';
 import { ReactSVG } from 'react-svg';
 // import logo from 'assets/logo.svg';
@@ -30,7 +32,7 @@ Logo.defaultProps = {
 };
 
 Logo.propTypes = {
-    handleClick: React.PropTypes.func
+    handleClick: PropTypes.func
 };
 
 export default Logo;

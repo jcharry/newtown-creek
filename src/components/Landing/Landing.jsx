@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import Home from './Home';
@@ -33,8 +34,8 @@ export class Landing extends React.Component {
 }
 
 Landing.propTypes = {
-    isLoading: React.PropTypes.bool,
-    isHomeVisible: React.PropTypes.bool
+    isLoading: PropTypes.bool,
+    isHomeVisible: PropTypes.bool
 };
 
 export default connect((state) => {

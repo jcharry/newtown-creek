@@ -1,4 +1,6 @@
 /* global alert */
+import PropTypes from 'prop-types';
+
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/actions';
@@ -95,8 +97,8 @@ class MailingListBox extends React.Component {
 }
 
 MailingListBox.propTypes = {
-    dispatch: React.PropTypes.func.isRequired,
-    signedup: React.PropTypes.bool.isRequired
+    dispatch: PropTypes.func.isRequired,
+    signedup: PropTypes.bool.isRequired
 };
 
 export default connect(state => ({

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -131,11 +132,11 @@ export class PamphletPage extends React.Component {
 }
 
 PamphletPage.propTypes = {
-    allPages: React.PropTypes.object.isRequired,
-    dispatch: React.PropTypes.func.isRequired,
-    nav: React.PropTypes.object.isRequired,
-    pageData: React.PropTypes.object.isRequired,
-    blurred: React.PropTypes.bool
+    allPages: PropTypes.object.isRequired,
+    dispatch: PropTypes.func.isRequired,
+    nav: PropTypes.object.isRequired,
+    pageData: PropTypes.object.isRequired,
+    blurred: PropTypes.bool
 };
 
 PamphletPage.defaultProps = {
