@@ -1,59 +1,64 @@
-/* global Image */
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-import React from 'react';
-import ReactGallery from 'react-grid-gallery';
+import React from 'react'
+import ReactGallery from 'react-grid-gallery'
 
 class Gallery extends React.Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props)
 
-        this.state = {
-            images: []
-        };
-
-        this.getImageSize = this.getImageSize.bind(this);
+    this.state = {
+      images: [],
     }
 
-    componentDidMount() {
-        const { images } = this.props;
-        const promises = images.map(img => this.getImageSize(img.src, img.thumbnail));
+    this.getImageSize = this.getImageSize.bind(this)
+  }
 
-        Promise.all(promises).then(data => {
-            const imgs = data.map(img => ({
-                thumbnailWidth: img.width,
-                thumbnailHeight: img.height,
-                src: img.imgSrc,
-                thumbnail: img.thumbSrc
-            }));
+  componentDidMount() {
+    const { images } = this.props
+    const promises = images.map((img) =>
+      this.getImageSize(img.src, img.thumbnail)
+    )
 
-            this.setState({
-                images: imgs
-            });
-        });
-    }
+    Promise.all(promises).then((data) => {
+      const imgs = data.map((img) => ({
+        thumbnailWidth: img.width,
+        thumbnailHeight: img.height,
+        src: img.imgSrc,
+        thumbnail: img.thumbSrc,
+      }))
 
-    getImageSize(imgSrc, thumbSrc) {
-        return new Promise((resolve, reject) => {
-            const newImg = new Image();
-            newImg.onload = function() {
-                const width = newImg.width;
-                const height = newImg.height;
-                resolve({ imgSrc, thumbSrc, width, height });
-            };
-            newImg.src = thumbSrc; // this must be done AFTER setting onload
-        });
-    }
+      this.setState({
+        images: imgs,
+      })
+    })
+  }
 
-    render() {
-        return (
-            <ReactGallery enableImageSelection={false} style={{ width: '100%' }} images={this.state.images} />
-        );
-    }
+  getImageSize(imgSrc, thumbSrc) {
+    return new Promise((resolve, reject) => {
+      const newImg = new Image()
+      newImg.onload = function () {
+        const width = newImg.width
+        const height = newImg.height
+        resolve({ imgSrc, thumbSrc, width, height })
+      }
+      newImg.src = thumbSrc // this must be done AFTER setting onload
+    })
+  }
+
+  render() {
+    return (
+      <ReactGallery
+        enableImageSelection={false}
+        style={{ width: '100%' }}
+        images={this.state.images}
+      />
+    )
+  }
 }
 
 Gallery.propTypes = {
-    images: PropTypes.array.isRequired
-};
+  images: PropTypes.array.isRequired,
+}
 
-export default Gallery;
+export default Gallery

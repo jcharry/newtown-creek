@@ -7,7 +7,7 @@ import InteractiveMap from '../Elements/InteractiveMap'
 import ExternalLink from '../Elements/ExternalLink'
 import Gallery from '../Elements/Gallery'
 
-export default {
+const pageInfo = {
   introduction: {
     header: 'Introduction',
     subHeader: '',
@@ -624,3 +624,4 @@ export default {
     ),
   },
 }
+export default pageInfo

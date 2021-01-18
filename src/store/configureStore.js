@@ -1,4 +1,3 @@
-/* global window */
 import * as redux from 'redux'
 import thunk from 'redux-thunk'
 

@@ -1,4 +1,3 @@
-/* global document */
 // Client side modules
 import ReactDOM from 'react-dom'
 import React from 'react'
