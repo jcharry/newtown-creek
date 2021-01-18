@@ -8,7 +8,6 @@ import DownloadPopup from '../DownloadPopup'
 
 export class PamphletContainer extends React.Component {
   render() {
-    console.log({ props: this.props })
     const pageData = this.props.pageInfo[this.props.match.params.page]
     const { popup, nav } = this.props
     // get page size
